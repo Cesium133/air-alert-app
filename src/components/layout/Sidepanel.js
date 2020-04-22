@@ -45,6 +45,7 @@ const Sidepanel = () => {
           </div>
           <Drawer
             active={this.state.active}
+            drawerWidth={400}
             right={this.state.drawerDirection === 'right'}
             onRequestClose={this.hideDrawer}
           >
