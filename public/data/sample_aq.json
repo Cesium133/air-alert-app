@@ -1,1092 +1,1525 @@
-[
-  {
-    "lat": -1.28,
-    "lng": 36.82,
-    "aqi": 94.15
-  },
-  {
-    "lat": 31.168889,
-    "lng": -96.481944,
-    "aqi": 31.15
-  },
-  {
-    "lat": -1.31122,
-    "lng": 36.87311,
-    "aqi": 57.03
-  },
-  {
-    "lat": -1.253111,
-    "lng": 36.85653,
-    "aqi": 60.52
-  },
-  {
-    "lat": 40.2778,
-    "lng": -105.5453,
-    "aqi": 52.3
-  },
-  {
-    "lat": 47.808226,
-    "lng": -117.34327,
-    "aqi": 58.06
-  },
-  {
-    "lat": 47.663963,
-    "lng": -117.257652,
-    "aqi": 30.55
-  },
-  {
-    "lat": 47.660568,
-    "lng": -117.084503,
-    "aqi": 76.91
-  },
-  {
-    "lat": 29.489082,
-    "lng": -81.276833,
-    "aqi": 36.28
-  },
-  {
-    "lat": 39.371679,
-    "lng": -76.746814,
-    "aqi": 91.22
-  },
-  {
-    "lat": 40.631699,
-    "lng": -74.156898,
-    "aqi": 40.91
-  },
-  {
-    "lat": 38.257656,
-    "lng": -119.218483,
-    "aqi": 24.2
-  },
-  {
-    "lat": 40.5802,
-    "lng": -74.1994,
-    "aqi": 20.74
-  },
-  {
-    "lat": 39.146025,
-    "lng": -84.538375,
-    "aqi": 84.85
-  },
-  {
-    "lat": 37.817763,
-    "lng": -118.475897,
-    "aqi": 96.17
-  },
-  {
-    "lat": -34.5773,
-    "lng": -58.4176,
-    "aqi": 79.96
-  },
-  {
-    "lat": 40.882198,
-    "lng": -106.306107,
-    "aqi": 33.39
-  },
-  {
-    "lat": 48.3456,
-    "lng": -117.277496,
-    "aqi": 29.95
-  },
-  {
-    "lat": 39.12886,
-    "lng": -84.50404,
-    "aqi": 63.57
-  },
-  {
-    "lat": 41.096158,
-    "lng": -80.658908,
-    "aqi": 75.47
-  },
-  {
-    "lat": 34.635958,
-    "lng": -82.810667,
-    "aqi": 77.9
-  },
-  {
-    "lat": 41.095938,
-    "lng": -80.658467,
-    "aqi": 17.47
-  },
-  {
-    "lat": 34.100132,
-    "lng": -117.491982,
-    "aqi": 63.7
-  },
-  {
-    "lat": 38.410242,
-    "lng": -82.432436,
-    "aqi": 94.58
-  },
-  {
-    "lat": 34.669589,
-    "lng": -118.130689,
-    "aqi": 19.88
-  },
-  {
-    "lat": 34.8289,
-    "lng": -118.8791,
-    "aqi": 41.09
-  },
-  {
-    "lat": 42.7186,
-    "lng": -109.7531,
-    "aqi": 1.63
-  },
-  {
-    "lat": 41.9756,
-    "lng": -72.3867,
-    "aqi": 56.24
-  },
-  {
-    "lat": 29.38777,
-    "lng": -95.041389,
-    "aqi": 84.78
-  },
-  {
-    "lat": 42.98,
-    "lng": -110.353058,
-    "aqi": 13.9
-  },
-  {
-    "lat": 35.0544,
-    "lng": -119.4039,
-    "aqi": 37.92
-  },
-  {
-    "lat": 35.345607,
-    "lng": -118.851825,
-    "aqi": 16.31
-  },
-  {
-    "lat": 32.5418,
-    "lng": -97.1175,
-    "aqi": 67.23
-  },
-  {
-    "lat": 42.434149,
-    "lng": -123.348466,
-    "aqi": 10.03
-  },
-  {
-    "lat": 34.066429,
-    "lng": -118.226755,
-    "aqi": 1.28
-  },
-  {
-    "lat": 37.2267,
-    "lng": -121.9786,
-    "aqi": 58.66
-  },
-  {
-    "lat": 31.6172,
-    "lng": -97.2278,
-    "aqi": 98.2
-  },
-  {
-    "lat": 35.05045,
-    "lng": -118.14778,
-    "aqi": 84.26
-  },
-  {
-    "lat": 35.3853,
-    "lng": -119.014702,
-    "aqi": 54.46
-  },
-  {
-    "lat": 35.621113,
-    "lng": -117.673058,
-    "aqi": 32.15
-  },
-  {
-    "lat": 35.356615,
-    "lng": -119.062613,
-    "aqi": 69.49
-  },
-  {
-    "lat": 29.0111,
-    "lng": -95.3975,
-    "aqi": 8.15
-  },
-  {
-    "lat": 36.532616,
-    "lng": -82.516303,
-    "aqi": 51.13
-  },
-  {
-    "lat": 29.5203,
-    "lng": -95.3925,
-    "aqi": 66.8
-  },
-  {
-    "lat": 36.52102,
-    "lng": -82.516306,
-    "aqi": 62.04
-  },
-  {
-    "lat": 38.3525,
-    "lng": -121.9617,
-    "aqi": 51.2
-  },
-  {
-    "lat": 10.782773,
-    "lng": 106.700035,
-    "aqi": 28.19
-  },
-  {
-    "lat": 36.9533,
-    "lng": -120.0341,
-    "aqi": 53.01
-  },
-  {
-    "lat": 40.635275,
-    "lng": -80.546642,
-    "aqi": 42.3
-  },
-  {
-    "lat": 30.3503,
-    "lng": -95.425,
-    "aqi": 0.66
-  },
-  {
-    "lat": 40.6397,
-    "lng": -80.5329,
-    "aqi": 9
-  },
-  {
-    "lat": 40.931398,
-    "lng": -81.123519,
-    "aqi": 16.3
-  },
-  {
-    "lat": 44.0878,
-    "lng": -75.9744,
-    "aqi": 87
-  },
-  {
-    "lat": 45.168434,
-    "lng": -113.888962,
-    "aqi": 48.97
-  },
-  {
-    "lat": 45.181907,
-    "lng": -113.890285,
-    "aqi": 39.39
-  },
-  {
-    "lat": 36.0528,
-    "lng": -89.3819,
-    "aqi": 14.83
-  },
-  {
-    "lat": 34.0026,
-    "lng": -89.799,
-    "aqi": 34.5
-  },
-  {
-    "lat": 35.912487,
-    "lng": -82.062082,
-    "aqi": 17.79
-  },
-  {
-    "lat": 32.414342,
-    "lng": -111.154544,
-    "aqi": 85.61
-  },
-  {
-    "lat": 32.1764,
-    "lng": -110.7378,
-    "aqi": 13
-  },
-  {
-    "lat": 46.69838,
-    "lng": -68.038933,
-    "aqi": 8.27
-  },
-  {
-    "lat": 35.3692,
-    "lng": -77.9939,
-    "aqi": 28.89
-  },
-  {
-    "lat": 35.1028,
-    "lng": -85.1622,
-    "aqi": 85.67
-  },
-  {
-    "lat": 35.0508,
-    "lng": -85.2931,
-    "aqi": 74.06
-  },
-  {
-    "lat": 39.2787,
-    "lng": -84.36612,
-    "aqi": 95.33
-  },
-  {
-    "lat": 40.67025,
-    "lng": -74.126083,
-    "aqi": 53.31
-  },
-  {
-    "lat": 30.2211,
-    "lng": -91.3153,
-    "aqi": 9.27
-  },
-  {
-    "lat": 14.989397,
-    "lng": -90.522408,
-    "aqi": 7.72
-  },
-  {
-    "lat": 43.7995,
-    "lng": -123.0535,
-    "aqi": 52.41
-  },
-  {
-    "lat": 30.399401,
-    "lng": -91.418297,
-    "aqi": 44.03
-  },
-  {
-    "lat": 42.4006,
-    "lng": -72.5236,
-    "aqi": 72.5
-  },
-  {
-    "lat": 40.838329,
-    "lng": -115.766003,
-    "aqi": 49.44
-  },
-  {
-    "lat": 39.101439,
-    "lng": -90.344494,
-    "aqi": 99.51
-  },
-  {
-    "lat": 39.21494,
-    "lng": -84.69086,
-    "aqi": 70.33
-  },
-  {
-    "lat": 30.5872,
-    "lng": -91.207199,
-    "aqi": 8.7
-  },
-  {
-    "lat": 53.9147,
-    "lng": -122.7419,
-    "aqi": 74.78
-  },
-  {
-    "lat": 53.8711,
-    "lng": -122.7436,
-    "aqi": 89.42
-  },
-  {
-    "lat": 38.74643,
-    "lng": -121.26498,
-    "aqi": 30.52
-  },
-  {
-    "lat": 53.8583,
-    "lng": -122.7608,
-    "aqi": 90.18
-  },
-  {
-    "lat": 39.1003,
-    "lng": -120.9528,
-    "aqi": 92.31
-  },
-  {
-    "lat": 38.937801,
-    "lng": -121.103897,
-    "aqi": 64.88
-  },
-  {
-    "lat": 37.70264,
-    "lng": -89.69864,
-    "aqi": 11.31
-  },
-  {
-    "lat": 46.3864,
-    "lng": -62.5828,
-    "aqi": 86.83
-  },
-  {
-    "lat": 33.1944,
-    "lng": -97.1933,
-    "aqi": 10.87
-  },
-  {
-    "lat": 40.598056,
-    "lng": -111.894167,
-    "aqi": 75.04
-  },
-  {
-    "lat": 43.2781,
-    "lng": -86.3111,
-    "aqi": 65.21
-  },
-  {
-    "lat": 35.2994,
-    "lng": -106.5483,
-    "aqi": 46.09
-  },
-  {
-    "lat": 37.358898,
-    "lng": -77.593597,
-    "aqi": 94.39
-  },
-  {
-    "lat": 46.682299,
-    "lng": -68.016195,
-    "aqi": 90.5
-  },
-  {
-    "lat": 35.238098,
-    "lng": -106.649399,
-    "aqi": 43.09
-  },
-  {
-    "lat": 45.0892,
-    "lng": -67.0786,
-    "aqi": 64.77
-  },
-  {
-    "lat": 46.243621,
-    "lng": -114.158889,
-    "aqi": 50.24
-  },
-  {
-    "lat": 48.705551,
-    "lng": -116.368965,
-    "aqi": 36.57
-  },
-  {
-    "lat": 39.3961,
-    "lng": -89.8094,
-    "aqi": 27.85
-  },
-  {
-    "lat": 41.08536,
-    "lng": -104.52277,
-    "aqi": 17.84
-  },
-  {
-    "lat": 32.879107,
-    "lng": -96.913552,
-    "aqi": 39.05
-  },
-  {
-    "lat": 34.6811,
-    "lng": -92.3283,
-    "aqi": 62.12
-  },
-  {
-    "lat": 33.999449,
-    "lng": -117.415831,
-    "aqi": 56.33
-  },
-  {
-    "lat": 34.8306,
-    "lng": -92.2594,
-    "aqi": 22.47
-  },
-  {
-    "lat": 33.996387,
-    "lng": -117.4925,
-    "aqi": 86.78
-  },
-  {
-    "lat": 32.630011,
-    "lng": -96.800599,
-    "aqi": 53.3
-  },
-  {
-    "lat": 37.6825,
-    "lng": -121.4406,
-    "aqi": 42.13
-  },
-  {
-    "lat": 42.33155,
-    "lng": -122.880266,
-    "aqi": 9.5
-  },
-  {
-    "lat": 19.5097,
-    "lng": -155.9133,
-    "aqi": 63.69
-  },
-  {
-    "lat": 53.5936,
-    "lng": -116.3928,
-    "aqi": 2.57
-  },
-  {
-    "lat": 48.7833,
-    "lng": -123.1333,
-    "aqi": 55.28
-  },
-  {
-    "lat": 46.474438,
-    "lng": -117.614764,
-    "aqi": 76.27
-  },
-  {
-    "lat": 38.8763,
-    "lng": -107.6022,
-    "aqi": 97.62
-  },
-  {
-    "lat": 25.67555,
-    "lng": -100.33833,
-    "aqi": 46.29
-  },
-  {
-    "lat": 37.2817,
-    "lng": -120.433601,
-    "aqi": 86.04
-  },
-  {
-    "lat": 33.29015,
-    "lng": -112.159874,
-    "aqi": 29.62
-  },
-  {
-    "lat": 46.6822,
-    "lng": -71.9678,
-    "aqi": 37.16
-  },
-  {
-    "lat": 35.6967,
-    "lng": -83.6089,
-    "aqi": 88.35
-  },
-  {
-    "lat": 35.562801,
-    "lng": -83.4981,
-    "aqi": 87.02
-  },
-  {
-    "lat": 25.745,
-    "lng": -100.25472,
-    "aqi": 46.31
-  },
-  {
-    "lat": 39.263914,
-    "lng": -86.292261,
-    "aqi": 93.37
-  },
-  {
-    "lat": 35.676128,
-    "lng": -101.43967,
-    "aqi": 88.12
-  },
-  {
-    "lat": 33.6636,
-    "lng": -89.0622,
-    "aqi": 57.3
-  },
-  {
-    "lat": 30.1975,
-    "lng": -91.1283,
-    "aqi": 0.75
-  },
-  {
-    "lat": 33.1325,
-    "lng": -96.7861,
-    "aqi": 45.76
-  },
-  {
-    "lat": 50.2008,
-    "lng": -104.7108,
-    "aqi": 8.62
-  },
-  {
-    "lat": 30.0411,
-    "lng": -90.2728,
-    "aqi": 57.02
-  },
-  {
-    "lat": 38.1358,
-    "lng": -94.7319,
-    "aqi": 11.75
-  },
-  {
-    "lat": 33.144662,
-    "lng": -96.828809,
-    "aqi": 63.84
-  },
-  {
-    "lat": 46.4425,
-    "lng": -72.8928,
-    "aqi": 91.03
-  },
-  {
-    "lat": 35.002197,
-    "lng": -78.991941,
-    "aqi": 5.1
-  },
-  {
-    "lat": 36.6675,
-    "lng": -76.7314,
-    "aqi": 91.57
-  },
-  {
-    "lat": 36.903301,
-    "lng": -76.438599,
-    "aqi": 57.67
-  },
-  {
-    "lat": 45.426351,
-    "lng": -117.296066,
-    "aqi": 78.74
-  },
-  {
-    "lat": 42.6725,
-    "lng": -81.1647,
-    "aqi": 19.05
-  },
-  {
-    "lat": 43.665,
-    "lng": -87.7161,
-    "aqi": 38.48
-  },
-  {
-    "lat": 28.3478,
-    "lng": -81.6367,
-    "aqi": 32.21
-  },
-  {
-    "lat": 46.9936,
-    "lng": -120.545,
-    "aqi": 41.74
-  },
-  {
-    "lat": 34.285599,
-    "lng": -79.744698,
-    "aqi": 79.23
-  },
-  {
-    "lat": 35.3772,
-    "lng": -89.8319,
-    "aqi": 9.92
-  },
-  {
-    "lat": 49.6639,
-    "lng": -93.7211,
-    "aqi": 76.92
-  },
-  {
-    "lat": 29.0436,
-    "lng": -95.4736,
-    "aqi": 91.22
-  },
-  {
-    "lat": 46.6588,
-    "lng": -112.0131,
-    "aqi": 31.39
-  },
-  {
-    "lat": 34.514999,
-    "lng": -98.3983,
-    "aqi": 44.76
-  },
-  {
-    "lat": 40.9606,
-    "lng": -85.3803,
-    "aqi": 27.99
-  },
-  {
-    "lat": 30.4744,
-    "lng": -88.1411,
-    "aqi": 56.79
-  },
-  {
-    "lat": 39.645288,
-    "lng": -119.840051,
-    "aqi": 51.15
-  },
-  {
-    "lat": 41.301288,
-    "lng": -72.902685,
-    "aqi": 54.51
-  },
-  {
-    "lat": 30.39,
-    "lng": -89.0497,
-    "aqi": 48.9
-  },
-  {
-    "lat": 41.492802,
-    "lng": -112.0187,
-    "aqi": 83.35
-  },
-  {
-    "lat": 39.250437,
-    "lng": -119.956741,
-    "aqi": 48.41
-  },
-  {
-    "lat": 41.512032,
-    "lng": -90.624016,
-    "aqi": 5.09
-  },
-  {
-    "lat": 46.842297,
-    "lng": -114.020549,
-    "aqi": 56.05
-  },
-  {
-    "lat": 49.4908,
-    "lng": -117.2953,
-    "aqi": 2.06
-  },
-  {
-    "lat": 52.2989,
-    "lng": -113.7942,
-    "aqi": 5.45
-  },
-  {
-    "lat": 39.159372,
-    "lng": -86.504747,
-    "aqi": 79.64
-  },
-  {
-    "lat": 46.6036,
-    "lng": -112.0353,
-    "aqi": 38.03
-  },
-  {
-    "lat": 34.632999,
-    "lng": -98.428802,
-    "aqi": 41.85
-  },
-  {
-    "lat": 41.537041,
-    "lng": -81.458889,
-    "aqi": 4.97
-  },
-  {
-    "lat": 29.862282,
-    "lng": -97.928856,
-    "aqi": 85.58
-  },
-  {
-    "lat": -1.26614,
-    "lng": 36.66314,
-    "aqi": 22.48
-  },
-  {
-    "lat": 36.512293,
-    "lng": -97.845627,
-    "aqi": 9.77
-  },
-  {
-    "lat": 40.054848,
-    "lng": -109.68737,
-    "aqi": 16.38
-  },
-  {
-    "lat": 40.204433,
-    "lng": -109.35321,
-    "aqi": 10.05
-  },
-  {
-    "lat": 53.6072,
-    "lng": -115.8769,
-    "aqi": 47.65
-  },
-  {
-    "lat": 47.012907,
-    "lng": -114.224273,
-    "aqi": 91.18
-  },
-  {
-    "lat": 47.17563,
-    "lng": -113.476182,
-    "aqi": 42.56
-  },
-  {
-    "lat": 46.8505,
-    "lng": -111.987164,
-    "aqi": 51.71
-  },
-  {
-    "lat": 35.32,
-    "lng": -97.4883,
-    "aqi": 81.93
-  },
-  {
-    "lat": 35.551868,
-    "lng": -80.395039,
-    "aqi": 22.62
-  },
-  {
-    "lat": 35.5347,
-    "lng": -80.6986,
-    "aqi": 48.86
-  },
-  {
-    "lat": 30.4266,
-    "lng": -86.6667,
-    "aqi": 35.85
-  },
-  {
-    "lat": 45.04,
-    "lng": -64.29,
-    "aqi": 87.98
-  },
-  {
-    "lat": 41.2658,
-    "lng": -75.8464,
-    "aqi": 11.21
-  },
-  {
-    "lat": 41.2092,
-    "lng": -76.0033,
-    "aqi": 49.45
-  },
-  {
-    "lat": 32.344008,
-    "lng": -95.415751,
-    "aqi": 75.32
-  },
-  {
-    "lat": 42.895957,
-    "lng": -122.13593,
-    "aqi": 1.3
-  },
-  {
-    "lat": 33.5079,
-    "lng": -111.754601,
-    "aqi": 46.26
-  },
-  {
-    "lat": 33.474499,
-    "lng": -111.805099,
-    "aqi": 48.97
-  },
-  {
-    "lat": 19.717562,
-    "lng": -155.110535,
-    "aqi": 43.45
-  },
-  {
-    "lat": 33.4883,
-    "lng": -111.855003,
-    "aqi": 64.78
-  },
-  {
-    "lat": -1.310669,
-    "lng": 36.81055,
-    "aqi": 37.66
-  },
-  {
-    "lat": 33.507999,
-    "lng": -111.837799,
-    "aqi": 41.03
-  },
-  {
-    "lat": 32.470156,
-    "lng": -97.169116,
-    "aqi": 28.57
-  },
-  {
-    "lat": 19.4525,
-    "lng": -99.086,
-    "aqi": 88.65
-  },
-  {
-    "lat": 41.6992,
-    "lng": -90.521896,
-    "aqi": 63.25
-  },
-  {
-    "lat": 41.529999,
-    "lng": -90.587502,
-    "aqi": 66.35
-  },
-  {
-    "lat": 41.467201,
-    "lng": -90.688301,
-    "aqi": 52.17
-  },
-  {
-    "lat": 41.516399,
-    "lng": -90.618896,
-    "aqi": 68.75
-  },
-  {
-    "lat": 37.7808,
-    "lng": -87.0756,
-    "aqi": 81.3
-  },
-  {
-    "lat": -1.28156,
-    "lng": 36.81883,
-    "aqi": 7.32
-  },
-  {
-    "lat": 48.740799,
-    "lng": -113.4347,
-    "aqi": 91.73
-  },
-  {
-    "lat": 43.111364,
-    "lng": -70.76973,
-    "aqi": 64.83
-  },
-  {
-    "lat": 39.68425,
-    "lng": -74.861488,
-    "aqi": 5.85
-  },
-  {
-    "lat": 37.9081,
-    "lng": -80.632797,
-    "aqi": 82.66
-  },
-  {
-    "lat": 39.2981,
-    "lng": -76.604698,
-    "aqi": 78.6
-  },
-  {
-    "lat": 45.4369,
-    "lng": -75.7261,
-    "aqi": 4.88
-  },
-  {
-    "lat": 40.3,
-    "lng": -85.245556,
-    "aqi": 4.96
-  },
-  {
-    "lat": 39.757837,
-    "lng": -84.191668,
-    "aqi": 41.22
-  },
-  {
-    "lat": 60.79583,
-    "lng": -161.767,
-    "aqi": 18.15
-  },
-  {
-    "lat": 26.6028,
-    "lng": -81.8789,
-    "aqi": 13.22
-  },
-  {
-    "lat": 42.4631,
-    "lng": -83.183296,
-    "aqi": 15.39
-  },
-  {
-    "lat": 47.568236,
-    "lng": -122.308628,
-    "aqi": 74.82
-  },
-  {
-    "lat": 39.0667,
-    "lng": -88.548302,
-    "aqi": 11.12
-  },
-  {
-    "lat": 42.267002,
-    "lng": -89.08917,
-    "aqi": 60.14
-  },
-  {
-    "lat": 38.536722,
-    "lng": -76.617194,
-    "aqi": 94.49
-  },
-  {
-    "lat": 40.7269,
-    "lng": -73.8933,
-    "aqi": 74.8
-  },
-  {
-    "lat": 27.864273,
-    "lng": -82.383359,
-    "aqi": 95.13
-  },
-  {
-    "lat": 27.7403,
-    "lng": -82.4656,
-    "aqi": 17.01
-  },
-  {
-    "lat": 44.6633,
-    "lng": -105.287498,
-    "aqi": 33.14
-  },
-  {
-    "lat": 40.7375,
-    "lng": -73.8244,
-    "aqi": 11.12
-  },
-  {
-    "lat": 37.5626,
-    "lng": -77.465,
-    "aqi": 70.07
-  },
-  {
-    "lat": 40.739264,
-    "lng": -73.817694,
-    "aqi": 11.05
-  },
-  {
-    "lat": 39.0217,
-    "lng": -84.4744,
-    "aqi": 95.57
-  },
-  {
-    "lat": 30.153675,
-    "lng": -93.725897,
-    "aqi": 27.16
-  },
-  {
-    "lat": 45.2094,
-    "lng": -123.2118,
-    "aqi": 2.54
-  },
-  {
-    "lat": 45.2094,
-    "lng": -123.2118,
-    "aqi": 46.39
-  },
-  {
-    "lat": 39.5689,
-    "lng": -104.9572,
-    "aqi": 89.21
-  },
-  {
-    "lat": 39.78563,
-    "lng": -84.13437,
-    "aqi": 81.86
-  },
-  {
-    "lat": 41.783389,
-    "lng": -107.119184,
-    "aqi": 37.03
-  },
-  {
-    "lat": 9.949488,
-    "lng": -84.142878,
-    "aqi": 71.52
-  },
-  {
-    "lat": 32.98426,
-    "lng": -97.063705,
-    "aqi": 90.82
-  },
-  {
-    "lat": 39.760659,
-    "lng": -84.187678,
-    "aqi": 16.11
-  }
-]
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.746814, 39.371679, 132.7]
+      },
+      "properties": {
+        "AQSID": 240050009,
+        "SiteName": "Baltimore County Near Road",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.593597, 37.358898, 0]
+      },
+      "properties": {
+        "AQSID": 510410004,
+        "SiteName": "BEACH ROAD",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 22,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.7314, 36.6675, 0]
+      },
+      "properties": {
+        "AQSID": 518000005,
+        "SiteName": "HOLLAND",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 27,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.438599, 36.903301, 0]
+      },
+      "properties": {
+        "AQSID": 518000004,
+        "SiteName": "TIDEWATER COMM. COLLEGE",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 29,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.604698, 39.2981, 11.9]
+      },
+      "properties": {
+        "AQSID": 245100040,
+        "SiteName": "Oldtown",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": 18,
+        "NO2": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.617194, 38.536722, 43.3]
+      },
+      "properties": {
+        "AQSID": 240090011,
+        "SiteName": "Calvert",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 24,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.465, 37.5626, 0]
+      },
+      "properties": {
+        "AQSID": 517600024,
+        "SiteName": "RICHMOND - SCIENCE MUSEUM",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.011902, 39.705799, 764.6]
+      },
+      "properties": {
+        "AQSID": 240230002,
+        "SiteName": "Piney Run",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 15,
+        "PM10": -9999,
+        "PM25": 34,
+        "NO2": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.159401, 38.251099, 2.7]
+      },
+      "properties": {
+        "AQSID": 240471001,
+        "SiteName": "Assateague Island NS",
+        "Status": "Inactive",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.474444, 39.310833, 12.8]
+      },
+      "properties": {
+        "AQSID": 240053001,
+        "SiteName": "Essex",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 25,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.3992, 37.0033, 176.9]
+      },
+      "properties": {
+        "AQSID": 516500004,
+        "SiteName": "VA SCHOOL",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.386948, 37.103683, 4]
+      },
+      "properties": {
+        "AQSID": 516500008,
+        "SiteName": "HAMPTON",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 28,
+        "PM10": -9999,
+        "PM25": 39,
+        "NO2": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.203903, 39.563301, 127.8]
+      },
+      "properties": {
+        "AQSID": 240259001,
+        "SiteName": "Aldino",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 27,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.254997, 36.893101, 0]
+      },
+      "properties": {
+        "AQSID": 511970002,
+        "SiteName": "RURAL RETREAT",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 13,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.2967, 39.41, 8.5]
+      },
+      "properties": {
+        "AQSID": 240251001,
+        "SiteName": "Edgewood",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 22,
+        "PM10": -9999,
+        "PM25": 13,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.5126, 37.62668, 287.9]
+      },
+      "properties": {
+        "AQSID": 511630003,
+        "SiteName": "NATBRIDGE",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 26,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.511367, 39.158883, 59.8]
+      },
+      "properties": {
+        "AQSID": 240032002,
+        "SiteName": "Riviera Beach",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.811897, 38.5042, 51.2]
+      },
+      "properties": {
+        "AQSID": 240170010,
+        "SiteName": "Southern Maryland",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 25,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.041702, 39.444199, 227.5]
+      },
+      "properties": {
+        "AQSID": 240130001,
+        "SiteName": "South Carroll",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 21,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.37742, 38.20087, 68]
+      },
+      "properties": {
+        "AQSID": 510330001,
+        "SiteName": "CORBIN",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 28,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.611, 39.595001, 0]
+      },
+      "properties": {
+        "AQSID": 100031008,
+        "SiteName": "Rte 9 Del. City",
+        "Status": "Active",
+        "State": "DE",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": 19,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.7308, 39.5511, 0]
+      },
+      "properties": {
+        "AQSID": 100031007,
+        "SiteName": "LUMS 2",
+        "Status": "Active",
+        "State": "DE",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 19,
+        "PM10": -9999,
+        "PM25": 18,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.5639, 39.8172, 0]
+      },
+      "properties": {
+        "AQSID": 100031010,
+        "SiteName": "BCSP",
+        "Status": "Active",
+        "State": "DE",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 21,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.496399, 39.773899, 0]
+      },
+      "properties": {
+        "AQSID": 100031013,
+        "SiteName": "BELLFNT2",
+        "Status": "Active",
+        "State": "DE",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 27,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.198898, 38.9319, 0]
+      },
+      "properties": {
+        "AQSID": 510595001,
+        "SiteName": "LEWINSVILLE",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.884201, 37.285599, 0]
+      },
+      "properties": {
+        "AQSID": 511611004,
+        "SiteName": "EAST VINTON ELEMENTARY SCHOOL",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 26,
+        "PM10": -9999,
+        "PM25": 13,
+        "NO2": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.058899, 38.859402, 0]
+      },
+      "properties": {
+        "AQSID": 510130020,
+        "SiteName": "AURORA HILLS",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 29,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.40027, 37.55652, 58.6]
+      },
+      "properties": {
+        "AQSID": 510870014,
+        "SiteName": "MATH & SCIENCE CTR",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 26,
+        "PM10": -9999,
+        "PM25": 28,
+        "NO2": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.106903, 39.114399, 124.4]
+      },
+      "properties": {
+        "AQSID": 240313001,
+        "SiteName": "Rockville",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 14,
+        "PM10": -9999,
+        "PM25": 13,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-78.31, 37.17, 150.1]
+      },
+      "properties": {
+        "AQSID": 511479991,
+        "SiteName": "Prince Edward",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 25,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.797203, 39.305199, 22.3]
+      },
+      "properties": {
+        "AQSID": 240290002,
+        "SiteName": "Millington",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 23,
+        "PM10": -9999,
+        "PM25": 25,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.631599, 39.462002, 119.6]
+      },
+      "properties": {
+        "AQSID": 240051007,
+        "SiteName": "Padonia",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 27,
+        "PM10": -9999,
+        "PM25": 15,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.545666, 38.013875, 0]
+      },
+      "properties": {
+        "AQSID": 840240000000,
+        "SiteName": "Pocomoke City",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": 9,
+        "PM25": 30,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.635597, 38.855301, 0]
+      },
+      "properties": {
+        "AQSID": 511530009,
+        "SiteName": "JAMES S. LONG PARK",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 23,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.3703, 38.483101, 0]
+      },
+      "properties": {
+        "AQSID": 511790001,
+        "SiteName": "WIDEWATER",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 29,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.260803, 37.3419, 0]
+      },
+      "properties": {
+        "AQSID": 510360002,
+        "SiteName": "SHIRLEY PLANTATION",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 20,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.8172, 39.0284, 45.8]
+      },
+      "properties": {
+        "AQSID": 240339991,
+        "SiteName": "Beltsville",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 20,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-78.4347, 38.5231, 1073.3]
+      },
+      "properties": {
+        "AQSID": 511130003,
+        "SiteName": "Shenandoah NP",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 26,
+        "PM10": -9999,
+        "PM25": 9,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.37519, 39.42276, 88.8]
+      },
+      "properties": {
+        "AQSID": 240210037,
+        "SiteName": "Frederick Airport",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 13,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.1114, 38.445, 4]
+      },
+      "properties": {
+        "AQSID": 240199991,
+        "SiteName": "Blackwater NWR",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 24,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.108902, 38.771702, 68]
+      },
+      "properties": {
+        "AQSID": 510590030,
+        "SiteName": "FRANCONIA",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 31,
+        "PM10": -9999,
+        "PM25": 18,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-78.503998, 38.076599, 176.9]
+      },
+      "properties": {
+        "AQSID": 510030001,
+        "SiteName": "Albemarle HS",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 23,
+        "PM10": -9999,
+        "PM25": 21,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.3446, 39.2572, 13.4]
+      },
+      "properties": {
+        "AQSID": 240053474,
+        "SiteName": "Hart Miller Island",
+        "Status": "Inactive",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.465302, 38.893902, 0]
+      },
+      "properties": {
+        "AQSID": 510590005,
+        "SiteName": "CUB RUN",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.077499, 38.7425, 0]
+      },
+      "properties": {
+        "AQSID": 510590018,
+        "SiteName": "MT VERNON",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.012816, 38.875161, 0]
+      },
+      "properties": {
+        "AQSID": 840110000000,
+        "SiteName": "King Greenleaf Rec Center",
+        "Status": "Active",
+        "State": "DC",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": 18,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.1408, 38.5876, 2.7]
+      },
+      "properties": {
+        "AQSID": 240190004,
+        "SiteName": "Horn Point",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 24,
+        "PM10": -9999,
+        "PM25": 22,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.767799, 38.474998, 0]
+      },
+      "properties": {
+        "AQSID": 510610002,
+        "SiteName": "SUMERDUCK",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 23,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.5556, 38.9847, 0]
+      },
+      "properties": {
+        "AQSID": 100010002,
+        "SiteName": "KILLENS",
+        "Status": "Active",
+        "State": "DE",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 24,
+        "PM10": -9999,
+        "PM25": 32,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-78.5047, 38.663101, 0]
+      },
+      "properties": {
+        "AQSID": 511390004,
+        "SiteName": "LURAY",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0467, 38.92726, 0]
+      },
+      "properties": {
+        "AQSID": 110019999,
+        "SiteName": "Washington",
+        "Status": "Active",
+        "State": "DC",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.860001, 39.701099, 117.7]
+      },
+      "properties": {
+        "AQSID": 240150003,
+        "SiteName": "Fair Hill",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 24,
+        "PM10": -9999,
+        "PM25": 20,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.721901, 39.565601, 163.5]
+      },
+      "properties": {
+        "AQSID": 240430009,
+        "SiteName": "Hagerstown",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 17,
+        "PM10": -9999,
+        "PM25": 27,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-78.816704, 38.4772, 0]
+      },
+      "properties": {
+        "AQSID": 511650003,
+        "SiteName": "Rockingham",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 7,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.218903, 37.606098, 0]
+      },
+      "properties": {
+        "AQSID": 510850003,
+        "SiteName": "HANOVER",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 24,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.481003, 37.0998, 11]
+      },
+      "properties": {
+        "AQSID": 517000013,
+        "SiteName": "Newport News",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.955597, 37.297199, 329.1]
+      },
+      "properties": {
+        "AQSID": 517700015,
+        "SiteName": "Round Hill Montessori School",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.744186, 38.812069, 5.8]
+      },
+      "properties": {
+        "AQSID": 240338003,
+        "SiteName": "PG Equestrian Center",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 26,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-78.081398, 39.282799, 191.8]
+      },
+      "properties": {
+        "AQSID": 510690010,
+        "SiteName": "BUTLER MANUF. CO NEAR REST",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 14,
+        "PM10": -9999,
+        "PM25": 24,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.6131, 38.6444, 0]
+      },
+      "properties": {
+        "AQSID": 100051002,
+        "SiteName": "SEAFORD",
+        "Status": "Active",
+        "State": "DE",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 29,
+        "PM10": -9999,
+        "PM25": 33,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.1667, 38.7833, 0]
+      },
+      "properties": {
+        "AQSID": 100051003,
+        "SiteName": "LEWES",
+        "Status": "Active",
+        "State": "DE",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 32,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.6281, 39.1694, 12.2]
+      },
+      "properties": {
+        "AQSID": 240031003,
+        "SiteName": "Glen Burnie",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 28,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.433073, 39.109951, 0]
+      },
+      "properties": {
+        "AQSID": 240033696,
+        "SiteName": "Downs Park",
+        "Status": "Inactive",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.489998, 39.024399, 0]
+      },
+      "properties": {
+        "AQSID": 511071005,
+        "SiteName": "ASHBURN",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 21,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.5581, 39.7394, 0]
+      },
+      "properties": {
+        "AQSID": 100032004,
+        "SiteName": "MLK",
+        "Status": "Active",
+        "State": "DE",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 22,
+        "PM10": -9999,
+        "PM25": 27,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.846192, 39.143197, 96.7]
+      },
+      "properties": {
+        "AQSID": 240270006,
+        "SiteName": "Howard County Near Road",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": 25,
+        "NO2": 16
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.026383, 39.483617, 494.1]
+      },
+      "properties": {
+        "AQSID": 240018882,
+        "SiteName": "Horse Rock",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.0638, 39.4864, 499.3]
+      },
+      "properties": {
+        "AQSID": 240018881,
+        "SiteName": "Moran",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.701489, 38.176541, 0]
+      },
+      "properties": {
+        "AQSID": 840240000000,
+        "SiteName": "UMES Farm",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": 8,
+        "PM25": 27,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.1633, 38.837502, 0]
+      },
+      "properties": {
+        "AQSID": 510591005,
+        "SiteName": "Annandale",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-80.5578, 37.3297, 920.5]
+      },
+      "properties": {
+        "AQSID": 510719991,
+        "SiteName": "Horton Station",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 35,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.878304, 39.055302, 52.8]
+      },
+      "properties": {
+        "AQSID": 240330030,
+        "SiteName": "HU-Beltsville",
+        "Status": "Active",
+        "State": "MD",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 20,
+        "PM10": -9999,
+        "PM25": 10,
+        "NO2": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.033129, 38.876048, 0]
+      },
+      "properties": {
+        "AQSID": 110010042,
+        "SiteName": "Ohio Drive",
+        "Status": "Inactive",
+        "State": "DC",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.958089, 38.895683, 0]
+      },
+      "properties": {
+        "AQSID": 110010041,
+        "SiteName": "RIVER_Terrace",
+        "Status": "Active",
+        "State": "DC",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 24,
+        "PM10": -9999,
+        "PM25": 15,
+        "NO2": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.013176, 38.921848, 0]
+      },
+      "properties": {
+        "AQSID": 110010044,
+        "SiteName": "McMillan NCORE",
+        "Status": "Active",
+        "State": "DC",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 30,
+        "PM10": 7,
+        "PM25": -9999,
+        "NO2": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.013176, 38.921848, 0]
+      },
+      "properties": {
+        "AQSID": 110010043,
+        "SiteName": "McMillan Reservoir",
+        "Status": "Active",
+        "State": "DC",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": 13,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.953427, 38.894749, 0]
+      },
+      "properties": {
+        "AQSID": 110010051,
+        "SiteName": "DCNearRoad",
+        "Status": "Active",
+        "State": "DC",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": 18,
+        "NO2": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.016715, 38.970101, 0]
+      },
+      "properties": {
+        "AQSID": 110010050,
+        "SiteName": "TakomaRec",
+        "Status": "Active",
+        "State": "DC",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": 25,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0439, 38.813099, 0]
+      },
+      "properties": {
+        "AQSID": 515100009,
+        "SiteName": "ALEXANDRIA HEALTH",
+        "Status": "Inactive",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.30135, 36.85555, 0]
+      },
+      "properties": {
+        "AQSID": 517100024,
+        "SiteName": "NORFOLK - NOAA",
+        "Status": "Active",
+        "State": "VA",
+        "Date": "4/25/2020",
+        "Time": "4:00",
+        "Ozone": -9999,
+        "PM10": -9999,
+        "PM25": -9999,
+        "NO2": 4
+      }
+    }
+  ]
+}
