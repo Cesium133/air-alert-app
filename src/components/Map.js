@@ -22,51 +22,82 @@ export class Map extends React.Component {
         'esri/views/MapView',
         'esri/layers/GraphicsLayer',
         'esri/Graphic',
-        'esri/geometry/Point',
+        'esri/layers/GeoJSONLayer',
       ],
       { css: true }
-    ).then(([ArcGISMap, MapView, GraphicsLayer, Graphic, Point]) => {
+    ).then(([ArcGISMap, MapView, GraphicsLayer, Graphic, GeoJSONLayer]) => {
+      //   const point = {
+      //     type: 'point', // autocasts as new Point()
+      //     longitude: -78,
+      //     latitude: 40,
+      //   };
+      //   const markerSymbol = {
+      //     type: 'simple-marker',
+      //     color: [0, 119, 40],
+      //     outline: {
+      //       color: [255, 255, 255],
+      //       width: 2,
+      //     },
+      //   };
+
+      //   const aqiGraphic = new Graphic({
+      //     geometry: point,
+      //     symbol: markerSymbol,
+      //   });
+
+      //   const layer = new GraphicsLayer({
+      //     graphics: [aqiGraphic],
+      //   });
+
+      //   map.add(layer);
+
+      const renderer = {
+        type: 'simple',
+        field: 'PM25',
+        symbol: {
+          type: 'simple-marker',
+          color: 'red',
+          outline: {
+            color: 'white',
+          },
+        },
+        visualVariables: [
+          {
+            type: 'color',
+            field: 'PM25',
+            stops: [
+              { value: 30, color: 'yellow' },
+              { value: 90, color: 'orange' },
+            ],
+          },
+        ],
+      };
+
+      const template = {
+        title: 'Air Quality Info:',
+        content: '{SiteName} is {Status}',
+      };
+
+      const aqDataUrl =
+        'https://raw.githubusercontent.com/Cesium133/air-alert-app/master/public/data/sample_aq.json';
+
+      const geojsonLayer = new GeoJSONLayer({
+        url: aqDataUrl,
+        renderer: renderer,
+        popupTemplate: template,
+      });
+
       const map = new ArcGISMap({
         basemap: 'topo-vector',
+        layers: [geojsonLayer],
       });
 
       this.view = new MapView({
         container: this.mapRef.current,
         map: map,
-        center: [-88, 40],
-        zoom: 5,
+        center: [-78, 38],
+        zoom: 7,
       });
-
-      const pointGraphic = new Graphic({
-        // geometry: point,
-        symbol: markerSymbol,
-      });
-
-      this.props.aqi.forEach((element) => {
-        const point = new Point({
-          longitude: element.lng,
-          latitude: element.lat,
-        });
-        pointGraphic.geometry = point;
-      });
-
-      //   const point = new Point({
-      //     x: -76, //this.props.aqi.lng,
-      //     y: 38, //this.props.aqi.lat,
-      //   });
-
-      var markerSymbol = {
-        type: 'simple-marker',
-        color: [226, 119, 40],
-        outline: {
-          color: [255, 255, 255],
-          width: 2,
-        },
-      };
-
-      this.view.graphics.add(pointGraphic);
-
-      console.log(this.props.aqi);
     });
   }
 

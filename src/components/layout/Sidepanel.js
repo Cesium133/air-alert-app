@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Drawer from 'calcite-react/Drawer';
 import Button from 'calcite-react/Button';
+import ChevronsRightIcon from 'calcite-ui-icons-react/ChevronsRightIcon';
 import SideNav, { SideNavTitle, SideNavLink } from 'calcite-react/SideNav';
 import { CalciteH2 } from 'calcite-react/Elements';
 import Radio from 'calcite-react/Radio';
@@ -39,12 +40,17 @@ const Sidepanel = () => {
     render() {
       return (
         <>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
             <Button
               onClick={() => this.showDrawerClicked('right')}
-              style={{ float: 'right' }}
+              //   style={{ float: 'right' }}
             >
-              Select Layer
+              <ChevronsRightIcon />
             </Button>
           </div>
           <Drawer
