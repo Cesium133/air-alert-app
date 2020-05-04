@@ -8,102 +8,110 @@ export class Map extends React.Component {
     this.mapRef = React.createRef();
   }
 
-  state = {};
+  state = {
+    aqsid: '330099991',
+  };
 
   //   static propTypes = {
   //     getAQData: PropTypes.func.isRequired,
   //   };
 
   componentDidMount() {
-    // lazy load the required ArcGIS API for JavaScript modules and CSS
     loadModules(
-      [
-        'esri/Map',
-        'esri/views/MapView',
-        'esri/layers/GraphicsLayer',
-        'esri/Graphic',
-        'esri/layers/GeoJSONLayer',
-      ],
+      ['esri/Map', 'esri/views/MapView', 'esri/layers/FeatureLayer'],
       { css: true }
-    ).then(([ArcGISMap, MapView, GraphicsLayer, Graphic, GeoJSONLayer]) => {
-      //   const point = {
-      //     type: 'point', // autocasts as new Point()
-      //     longitude: -78,
-      //     latitude: 40,
-      //   };
-      //   const markerSymbol = {
-      //     type: 'simple-marker',
-      //     color: [0, 119, 40],
-      //     outline: {
-      //       color: [255, 255, 255],
-      //       width: 2,
-      //     },
-      //   };
+    ).then(([ArcGISMap, MapView, FeatureLayer]) => {
+      const jsonObj = this.props.currentAQI;
+      jsonObj.forEach((obj) => {
+        obj.attributes.OzoneAQI = parseInt(obj.attributes.OzoneAQI);
+        obj.attributes.PM10AQI = parseInt(obj.attributes.PM10AQI);
+        obj.attributes.PM25AQI = parseInt(obj.attributes.PM25AQI);
+        obj.attributes.NO2AQI = parseInt(obj.attributes.NO2AQI);
+      });
 
-      //   const aqiGraphic = new Graphic({
-      //     geometry: point,
-      //     symbol: markerSymbol,
-      //   });
-
-      //   const layer = new GraphicsLayer({
-      //     graphics: [aqiGraphic],
-      //   });
-
-      //   map.add(layer);
-
-      const renderer = {
+      const pointRenderer = {
         type: 'simple',
-        field: 'PM25',
         symbol: {
           type: 'simple-marker',
+          size: 6,
           color: 'red',
           outline: {
-            color: 'white',
+            color: 'rgb(255,255,255)',
           },
         },
         visualVariables: [
           {
             type: 'color',
-            field: 'PM25',
+            field: 'PM25AQI',
             stops: [
-              { value: 30, color: 'yellow' },
-              { value: 90, color: 'orange' },
+              { value: -9999, color: [255, 255, 255, 0.2] },
+              { value: 50, color: 'rgb(0, 228, 0)' },
+              { value: 100, color: 'rgb(239, 245, 66)' },
+              { value: 150, color: 'rgb(255, 126, 0)' },
+              { value: 200, color: 'rgb(230, 0, 0)' },
+              { value: 300, color: 'rgb(128,0,128)' },
             ],
           },
         ],
       };
 
-      const template = {
+      const graphicTemplate = {
         title: 'Air Quality Info:',
-        content: '{SiteName} is {Status}',
+        content:
+          'Last Updated: {ValidDate} {ValidTime} <br> AQSID: <strong>{AQSID}</strong> <br> Sitename:<strong>{SiteName}</strong> <br> PM2.5: <strong>{PM25AQI}</strong> <br> PM10: <strong>{PM10AQI}</strong> <br> Ozone: <strong>{OzoneAQI}</strong> <br> NO2: <strong>{NO2AQI}</strong>',
       };
 
-      const aqDataUrl =
-        'https://raw.githubusercontent.com/Cesium133/air-alert-app/master/public/data/sample_aq.json';
-
-      const geojsonLayer = new GeoJSONLayer({
-        url: aqDataUrl,
-        renderer: renderer,
-        popupTemplate: template,
+      const aqLayer = new FeatureLayer({
+        source: jsonObj,
+        objectIdField: 'AQSID',
+        fields: [
+          { name: 'AQSID', type: 'oid' },
+          { name: 'SiteName', type: 'string' },
+          { name: 'Status', type: 'string' },
+          { name: 'State', type: 'string' },
+          { name: 'ValidDate', type: 'string' },
+          { name: 'ValidTime', type: 'string' },
+          { name: 'OzoneAQI', type: 'double' },
+          { name: 'PM10AQI', type: 'double' },
+          { name: 'PM25AQI', type: 'double' },
+          { name: 'NO2AQI', type: 'double' },
+        ],
+        popupTemplate: graphicTemplate,
+        renderer: pointRenderer,
+        definitionExpression: 'PM25AQI > -9999',
       });
 
       const map = new ArcGISMap({
-        basemap: 'topo-vector',
-        layers: [geojsonLayer],
+        basemap: 'dark-gray',
+        layers: [aqLayer],
       });
 
       this.view = new MapView({
         container: this.mapRef.current,
         map: map,
-        center: [-78, 38],
-        zoom: 7,
+        center: [-98, 38],
+        zoom: 5,
+        // popup: {
+        //   dockEnabled: true,
+        //   dockOptions: {
+        //     position: 'top-right',
+        //     breakpoint: false,
+        //   },
+        // },
+      });
+
+      this.view.on('click', (event) => {
+        this.view.hitTest(event).then((response) => {
+          console.log(response);
+        });
+
+        // this.props.last48Hours(this.state.aqsid);
       });
     });
   }
 
   componentWillUnmount() {
     if (this.view) {
-      // destroy the map view
       this.view.container = null;
     }
   }
