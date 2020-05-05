@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { loadModules } from 'esri-loader';
 
 export class Map extends React.Component {
@@ -12,45 +11,86 @@ export class Map extends React.Component {
     aqsid: '330099991',
   };
 
-  //   static propTypes = {
-  //     getAQData: PropTypes.func.isRequired,
-  //   };
-
   componentDidMount() {
     loadModules(
-      ['esri/Map', 'esri/views/MapView', 'esri/layers/FeatureLayer'],
+      [
+        'esri/Map',
+        'esri/views/MapView',
+        'esri/layers/FeatureLayer',
+        'esri/Graphic',
+        'esri/layers/GraphicsLayer',
+      ],
       { css: true }
-    ).then(([ArcGISMap, MapView, FeatureLayer]) => {
+    ).then(([ArcGISMap, MapView, FeatureLayer, Graphic, GraphicsLayer]) => {
       const jsonObj = this.props.currentAQI;
-      jsonObj.forEach((obj) => {
-        obj.attributes.OzoneAQI = parseInt(obj.attributes.OzoneAQI);
-        obj.attributes.PM10AQI = parseInt(obj.attributes.PM10AQI);
-        obj.attributes.PM25AQI = parseInt(obj.attributes.PM25AQI);
-        obj.attributes.NO2AQI = parseInt(obj.attributes.NO2AQI);
-      });
 
       const pointRenderer = {
-        type: 'simple',
-        symbol: {
+        type: 'class-breaks',
+        field: 'OzoneAQI',
+        defaultSymbol: {
           type: 'simple-marker',
-          size: 6,
+          size: 9,
           color: 'red',
           outline: {
             color: 'rgb(255,255,255)',
           },
         },
-        visualVariables: [
+        classBreakInfos: [
           {
-            type: 'color',
-            field: 'PM25AQI',
-            stops: [
-              { value: -9999, color: [255, 255, 255, 0.2] },
-              { value: 50, color: 'rgb(0, 228, 0)' },
-              { value: 100, color: 'rgb(239, 245, 66)' },
-              { value: 150, color: 'rgb(255, 126, 0)' },
-              { value: 200, color: 'rgb(230, 0, 0)' },
-              { value: 300, color: 'rgb(128,0,128)' },
-            ],
+            minValue: -9999,
+            maxValue: -1,
+            symbol: {
+              type: 'simple-marker',
+              color: [255, 255, 255, 0.2],
+            },
+          },
+          {
+            minValue: 0,
+            maxValue: 50,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(0, 228, 0)',
+            },
+          },
+          {
+            minValue: 51,
+            maxValue: 100,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(239, 245, 66)',
+            },
+          },
+          {
+            minValue: 101,
+            maxValue: 150,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(255, 126, 0)',
+            },
+          },
+          {
+            minValue: 151,
+            maxValue: 200,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(230, 0, 0)',
+            },
+          },
+          {
+            minValue: 201,
+            maxValue: 300,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(128,0,128)',
+            },
+          },
+          {
+            minValue: 301,
+            maxValue: 600,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(128, 0, 0)',
+            },
           },
         ],
       };
@@ -64,6 +104,7 @@ export class Map extends React.Component {
       const aqLayer = new FeatureLayer({
         source: jsonObj,
         objectIdField: 'AQSID',
+        outFields: ['*'],
         fields: [
           { name: 'AQSID', type: 'oid' },
           { name: 'SiteName', type: 'string' },
@@ -78,8 +119,30 @@ export class Map extends React.Component {
         ],
         popupTemplate: graphicTemplate,
         renderer: pointRenderer,
-        definitionExpression: 'PM25AQI > -9999',
+        definitionExpression: 'OzoneAQI > -9999',
+        geometryType: 'point',
       });
+
+      const graphicsLayer = new GraphicsLayer();
+
+      //   jsonObj.forEach((obj) => {
+      //     const graphic = new Graphic({
+      //       geometry: obj.geometry,
+      //       symbol: {
+      //         type: 'simple-marker',
+      //         color: [255, 255, 255, 0],
+      //         size: 9,
+      //       },
+      //       attributes: {
+
+      //       },
+      //       outline: {
+      //         color: 'rgb(255,25,43)',
+      //       },
+      //       popupTemplate: graphicTemplate,
+      //     });
+      //     graphicsLayer.add(graphic);
+      //   });
 
       const map = new ArcGISMap({
         basemap: 'dark-gray',
@@ -91,21 +154,13 @@ export class Map extends React.Component {
         map: map,
         center: [-98, 38],
         zoom: 5,
-        // popup: {
-        //   dockEnabled: true,
-        //   dockOptions: {
-        //     position: 'top-right',
-        //     breakpoint: false,
-        //   },
-        // },
       });
 
       this.view.on('click', (event) => {
         this.view.hitTest(event).then((response) => {
-          console.log(response);
+          console.log(response.results.length);
+          // this.props.last48Hours(this.state.aqsid);
         });
-
-        // this.props.last48Hours(this.state.aqsid);
       });
     });
   }

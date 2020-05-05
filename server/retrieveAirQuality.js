@@ -12,11 +12,13 @@ const getCurrentAQIs = () => {
   return new Promise((resolve, reject) => {
     pool.query(
       'SELECT * FROM airalert WHERE validdate + validtime = (select max(validdate + validtime ) from airalert) ORDER BY aqsid',
+      // "SELECT * FROM airalert WHERE validdate + validtime = (select max(validdate + validtime ) FROM airalert) AND sitename = 'Copper View' ORDER BY aqsid",
       (error, results) => {
         if (error) {
           console.log(error);
           reject(error);
         }
+        console.log(results.rows[0]);
         resolve(results.rows);
       }
     );

@@ -26,7 +26,7 @@ class App extends Component {
   getMonitorAQData = async (aqsid) => {
     const res = await axios.get(`http://localhost:3001/monitor?id=${aqsid}`);
     this.setState({ past48HoursAQData: res.data });
-    console.log(this.state.past48HoursAQData);
+    // console.log(this.state.past48HoursAQData);
   };
 
   updateJsonWithCurrentAQI(data) {
@@ -36,10 +36,16 @@ class App extends Component {
         'ValidDate'
       ] = record.validdate.slice(0, 10);
       currentAQJson.default[ind].attributes['ValidTime'] = record.validtime;
-      currentAQJson.default[ind].attributes['OzoneAQI'] = record.ozoneaqi;
-      currentAQJson.default[ind].attributes['PM10AQI'] = record.pm10aqi;
-      currentAQJson.default[ind].attributes['PM25AQI'] = record.pm25aqi;
-      currentAQJson.default[ind].attributes['NO2AQI'] = record.no2aqi;
+      currentAQJson.default[ind].attributes['OzoneAQI'] = parseInt(
+        record.ozoneaqi
+      );
+      currentAQJson.default[ind].attributes['PM10AQI'] = parseInt(
+        record.pm10aqi
+      );
+      currentAQJson.default[ind].attributes['PM25AQI'] = parseInt(
+        record.pm25aqi
+      );
+      currentAQJson.default[ind].attributes['NO2AQI'] = parseInt(record.no2aqi);
     });
 
     this.setState({ currentAQData: currentAQJson.default });
