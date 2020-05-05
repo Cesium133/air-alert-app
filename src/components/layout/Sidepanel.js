@@ -18,6 +18,7 @@ const Sidepanel = () => {
       super(props);
       this.state = {
         drawerDirection: 'right',
+        parameter: 'pm25',
         active: false,
       };
 
@@ -36,6 +37,15 @@ const Sidepanel = () => {
         active: false,
       });
     }
+
+    changeAQParameter = (event) => {
+      this.setState({ parameter: event.target.value });
+
+      console.log('Changed radio');
+      console.log(event.target.name);
+      console.log(event.target.value);
+      console.log(event.target);
+    };
 
     render() {
       return (
@@ -61,13 +71,38 @@ const Sidepanel = () => {
           >
             <SideNav className="">
               <CalciteH2 name="avenir-bold"> Welcome to Air Alert</CalciteH2>
-              <FormControl>
+              <FormControl onChange={this.changeAQParameter}>
                 <Fieldset name="docRadioGroup">
                   <Legend>Select parameter to display:</Legend>
-                  <Radio>PM2.5</Radio>
-                  <Radio>PM10</Radio>
-                  <Radio>Ozone</Radio>
-                  <Radio>NO2</Radio>
+                  <Radio
+                    // onChange={this.changeAQParameter}
+                    defaultChecked={true}
+                    name={'parameter'}
+                    value={'pm25'}
+                  >
+                    PM2.5
+                  </Radio>
+                  <Radio
+                    // onChange={this.changeAQParameter}
+                    name={'parameter'}
+                    value={'pm10'}
+                  >
+                    PM10
+                  </Radio>
+                  <Radio
+                    // onChange={this.changeAQParameter}
+                    name={'parameter'}
+                    value={'ozone'}
+                  >
+                    Ozone
+                  </Radio>
+                  <Radio
+                    // onChange={this.changeAQParameter}
+                    name={'parameter'}
+                    value={'no2'}
+                  >
+                    NO2
+                  </Radio>
                 </Fieldset>
               </FormControl>
               <Card style={{ maxWidth: '320px', margin: '20px' }}>

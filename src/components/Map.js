@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { loadModules } from 'esri-loader';
 
 export class Map extends React.Component {
@@ -8,102 +7,166 @@ export class Map extends React.Component {
     this.mapRef = React.createRef();
   }
 
-  state = {};
-
-  //   static propTypes = {
-  //     getAQData: PropTypes.func.isRequired,
-  //   };
+  state = {
+    aqsid: '330099991',
+  };
 
   componentDidMount() {
-    // lazy load the required ArcGIS API for JavaScript modules and CSS
     loadModules(
       [
         'esri/Map',
         'esri/views/MapView',
-        'esri/layers/GraphicsLayer',
+        'esri/layers/FeatureLayer',
         'esri/Graphic',
-        'esri/layers/GeoJSONLayer',
+        'esri/layers/GraphicsLayer',
       ],
       { css: true }
-    ).then(([ArcGISMap, MapView, GraphicsLayer, Graphic, GeoJSONLayer]) => {
-      //   const point = {
-      //     type: 'point', // autocasts as new Point()
-      //     longitude: -78,
-      //     latitude: 40,
-      //   };
-      //   const markerSymbol = {
-      //     type: 'simple-marker',
-      //     color: [0, 119, 40],
-      //     outline: {
-      //       color: [255, 255, 255],
-      //       width: 2,
-      //     },
-      //   };
+    ).then(([ArcGISMap, MapView, FeatureLayer, Graphic, GraphicsLayer]) => {
+      const jsonObj = this.props.currentAQI;
 
-      //   const aqiGraphic = new Graphic({
-      //     geometry: point,
-      //     symbol: markerSymbol,
-      //   });
-
-      //   const layer = new GraphicsLayer({
-      //     graphics: [aqiGraphic],
-      //   });
-
-      //   map.add(layer);
-
-      const renderer = {
-        type: 'simple',
-        field: 'PM25',
-        symbol: {
+      const pointRenderer = {
+        type: 'class-breaks',
+        field: 'OzoneAQI',
+        defaultSymbol: {
           type: 'simple-marker',
+          size: 9,
           color: 'red',
           outline: {
-            color: 'white',
+            color: 'rgb(255,255,255)',
           },
         },
-        visualVariables: [
+        classBreakInfos: [
           {
-            type: 'color',
-            field: 'PM25',
-            stops: [
-              { value: 30, color: 'yellow' },
-              { value: 90, color: 'orange' },
-            ],
+            minValue: -9999,
+            maxValue: -1,
+            symbol: {
+              type: 'simple-marker',
+              color: [255, 255, 255, 0.2],
+            },
+          },
+          {
+            minValue: 0,
+            maxValue: 50,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(0, 228, 0)',
+            },
+          },
+          {
+            minValue: 51,
+            maxValue: 100,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(239, 245, 66)',
+            },
+          },
+          {
+            minValue: 101,
+            maxValue: 150,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(255, 126, 0)',
+            },
+          },
+          {
+            minValue: 151,
+            maxValue: 200,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(230, 0, 0)',
+            },
+          },
+          {
+            minValue: 201,
+            maxValue: 300,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(128,0,128)',
+            },
+          },
+          {
+            minValue: 301,
+            maxValue: 600,
+            symbol: {
+              type: 'simple-marker',
+              color: 'rgb(128, 0, 0)',
+            },
           },
         ],
       };
 
-      const template = {
+      const graphicTemplate = {
         title: 'Air Quality Info:',
-        content: '{SiteName} is {Status}',
+        content:
+          'Last Updated: {ValidDate} {ValidTime} <br> AQSID: <strong>{AQSID}</strong> <br> Sitename:<strong>{SiteName}</strong> <br> PM2.5: <strong>{PM25AQI}</strong> <br> PM10: <strong>{PM10AQI}</strong> <br> Ozone: <strong>{OzoneAQI}</strong> <br> NO2: <strong>{NO2AQI}</strong>',
       };
 
-      const aqDataUrl =
-        'https://raw.githubusercontent.com/Cesium133/air-alert-app/master/public/data/sample_aq.json';
-
-      const geojsonLayer = new GeoJSONLayer({
-        url: aqDataUrl,
-        renderer: renderer,
-        popupTemplate: template,
+      const aqLayer = new FeatureLayer({
+        source: jsonObj,
+        objectIdField: 'AQSID',
+        outFields: ['*'],
+        fields: [
+          { name: 'AQSID', type: 'oid' },
+          { name: 'SiteName', type: 'string' },
+          { name: 'Status', type: 'string' },
+          { name: 'State', type: 'string' },
+          { name: 'ValidDate', type: 'string' },
+          { name: 'ValidTime', type: 'string' },
+          { name: 'OzoneAQI', type: 'double' },
+          { name: 'PM10AQI', type: 'double' },
+          { name: 'PM25AQI', type: 'double' },
+          { name: 'NO2AQI', type: 'double' },
+        ],
+        popupTemplate: graphicTemplate,
+        renderer: pointRenderer,
+        definitionExpression: 'OzoneAQI > -9999',
+        geometryType: 'point',
       });
 
+      const graphicsLayer = new GraphicsLayer();
+
+      //   jsonObj.forEach((obj) => {
+      //     const graphic = new Graphic({
+      //       geometry: obj.geometry,
+      //       symbol: {
+      //         type: 'simple-marker',
+      //         color: [255, 255, 255, 0],
+      //         size: 9,
+      //       },
+      //       attributes: {
+
+      //       },
+      //       outline: {
+      //         color: 'rgb(255,25,43)',
+      //       },
+      //       popupTemplate: graphicTemplate,
+      //     });
+      //     graphicsLayer.add(graphic);
+      //   });
+
       const map = new ArcGISMap({
-        basemap: 'topo-vector',
-        layers: [geojsonLayer],
+        basemap: 'dark-gray',
+        layers: [aqLayer],
       });
 
       this.view = new MapView({
         container: this.mapRef.current,
         map: map,
-        center: [-78, 38],
-        zoom: 7,
+        center: [-98, 38],
+        zoom: 5,
+      });
+
+      this.view.on('click', (event) => {
+        this.view.hitTest(event).then((response) => {
+          console.log(response.results.length);
+          // this.props.last48Hours(this.state.aqsid);
+        });
       });
     });
   }
 
   componentWillUnmount() {
     if (this.view) {
-      // destroy the map view
       this.view.container = null;
     }
   }
