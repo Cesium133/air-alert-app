@@ -5,7 +5,8 @@ import Map from './components/Map';
 import axios from 'axios';
 import './App.css';
 
-import * as currentAQJson from './data/currentAQ.json';
+// import * as currentAQJson from './data/currentAQ.json';
+import * as currentAQJson from './data/geoJsonTemplate.json';
 
 class App extends Component {
   state = {
@@ -33,20 +34,23 @@ class App extends Component {
   updateJsonWithCurrentAQI(data) {
     data.forEach((record) => {
       const ind = data.indexOf(record);
-      currentAQJson.default[ind].attributes[
+      currentAQJson.features[ind].properties['ValidTime'] = record.validtime;
+      currentAQJson.features[ind].properties[
         'ValidDate'
       ] = record.validdate.slice(0, 10);
-      currentAQJson.default[ind].attributes['ValidTime'] = record.validtime;
-      currentAQJson.default[ind].attributes['OzoneAQI'] = parseInt(
+      currentAQJson.features[ind].properties['ValidTime'] = record.validtime;
+      currentAQJson.features[ind].properties['OzoneAQI'] = parseInt(
         record.ozoneaqi
       );
-      currentAQJson.default[ind].attributes['PM10AQI'] = parseInt(
+      currentAQJson.features[ind].properties['PM10AQI'] = parseInt(
         record.pm10aqi
       );
-      currentAQJson.default[ind].attributes['PM25AQI'] = parseInt(
+      currentAQJson.features[ind].properties['PM25AQI'] = parseInt(
         record.pm25aqi
       );
-      currentAQJson.default[ind].attributes['NO2AQI'] = parseInt(record.no2aqi);
+      currentAQJson.features[ind].properties['NO2AQI'] = parseInt(
+        record.no2aqi
+      );
     });
 
     this.setState({ currentAQData: currentAQJson.default });

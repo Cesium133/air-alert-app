@@ -14,18 +14,12 @@ export class Map extends React.Component {
 
   componentDidMount() {
     loadModules(
-      [
-        'esri/Map',
-        'esri/views/MapView',
-        'esri/layers/FeatureLayer',
-        'esri/Graphic',
-        'esri/layers/GraphicsLayer',
-      ],
+      ['esri/Map', 'esri/views/MapView', 'esri/layers/GeoJSONLayer'],
       { css: true }
-    ).then(([ArcGISMap, MapView, FeatureLayer, Graphic, GraphicsLayer]) => {
+    ).then(([ArcGISMap, MapView, GeoJSONLayer]) => {
       const jsonObj = this.props.currentAQI;
 
-      this.setState({ activeParameter: this.props.AQParameter });
+      this.setState({ activeParameter: this.props.AQParameter }); // callback function to re-render map here
       const aqParameter = this.props.AQParameter;
       console.log("'" + aqParameter + " > -9999'");
 
@@ -47,6 +41,9 @@ export class Map extends React.Component {
             symbol: {
               type: 'simple-marker',
               color: [255, 255, 255, 0],
+              outline: {
+                color: [255, 255, 255, 0],
+              },
             },
           },
           {
@@ -106,52 +103,20 @@ export class Map extends React.Component {
           'Last Updated: {ValidDate} {ValidTime} <br> AQSID: <strong>{AQSID}</strong> <br> Sitename:<strong>{SiteName}</strong> <br> PM2.5: <strong>{PM25AQI}</strong> <br> PM10: <strong>{PM10AQI}</strong> <br> Ozone: <strong>{OzoneAQI}</strong> <br> NO2: <strong>{NO2AQI}</strong>',
       };
 
-      const aqLayer = new FeatureLayer({
-        source: jsonObj,
-        objectIdField: 'AQSID',
-        outFields: ['*'],
-        fields: [
-          { name: 'AQSID', type: 'oid' },
-          { name: 'SiteName', type: 'string' },
-          { name: 'Status', type: 'string' },
-          { name: 'State', type: 'string' },
-          { name: 'ValidDate', type: 'string' },
-          { name: 'ValidTime', type: 'string' },
-          { name: 'OzoneAQI', type: 'double' },
-          { name: 'PM10AQI', type: 'double' },
-          { name: 'PM25AQI', type: 'double' },
-          { name: 'NO2AQI', type: 'double' },
-        ],
+      const blob = new Blob([JSON.stringify(jsonObj)], {
+        type: 'application/json',
+      });
+      const aqURL = URL.createObjectURL(blob);
+
+      const geoJsonLayer = new GeoJSONLayer({
+        url: aqURL,
         popupTemplate: graphicTemplate,
         renderer: pointRenderer,
-        definitionExpression: "'" + this.state.activeParameter + " > -9999'",
-        geometryType: 'point',
-      });
-
-      const graphicsLayer = new GraphicsLayer();
-
-      jsonObj.forEach((obj) => {
-        if (obj.attributes[aqParameter] > -9999) {
-          const graphic = new Graphic({
-            geometry: obj.geometry,
-            symbol: {
-              type: 'simple-marker',
-              color: [255, 255, 255, 1],
-              size: 2,
-            },
-            attributes: {},
-            outline: {
-              color: [255, 255, 255, 0],
-            },
-            popupTemplate: graphicTemplate,
-          });
-          graphicsLayer.add(graphic);
-        }
       });
 
       const map = new ArcGISMap({
         basemap: 'dark-gray',
-        layers: [aqLayer, graphicsLayer],
+        layers: [geoJsonLayer],
       });
 
       this.view = new MapView({
@@ -164,7 +129,8 @@ export class Map extends React.Component {
       this.view.on('click', (event) => {
         this.view.hitTest(event).then((response) => {
           console.log(response.results.length);
-          this.props.getLast48Hours(this.state.aqsid);
+          console.log(response.results[0].graphic.attributes);
+          // this.props.getLast48Hours(this.state.aqsid);
         });
       });
     });
