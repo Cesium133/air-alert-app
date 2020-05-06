@@ -33,7 +33,7 @@ app.get('/monitor', (req, res) => {
   console.log('ID');
   console.log(req.query.id);
   retrieveAirQuality
-    .getMonitorPastAQIs()
+    .getMonitorPastAQIs(req.query.id)
     .then((response) => {
       res.status(200).send(response);
     })

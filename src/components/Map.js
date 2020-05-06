@@ -8,6 +8,7 @@ export class Map extends React.Component {
   }
 
   state = {
+    activeParameter: 'PM2.5',
     aqsid: '330099991',
   };
 
@@ -24,9 +25,13 @@ export class Map extends React.Component {
     ).then(([ArcGISMap, MapView, FeatureLayer, Graphic, GraphicsLayer]) => {
       const jsonObj = this.props.currentAQI;
 
+      this.setState({ activeParameter: this.props.AQParameter });
+      const aqParameter = this.props.AQParameter;
+      console.log("'" + aqParameter + " > -9999'");
+
       const pointRenderer = {
         type: 'class-breaks',
-        field: 'OzoneAQI',
+        field: this.state.activeParameter,
         defaultSymbol: {
           type: 'simple-marker',
           size: 9,
@@ -41,7 +46,7 @@ export class Map extends React.Component {
             maxValue: -1,
             symbol: {
               type: 'simple-marker',
-              color: [255, 255, 255, 0.2],
+              color: [255, 255, 255, 0],
             },
           },
           {
@@ -119,34 +124,34 @@ export class Map extends React.Component {
         ],
         popupTemplate: graphicTemplate,
         renderer: pointRenderer,
-        definitionExpression: 'OzoneAQI > -9999',
+        definitionExpression: "'" + this.state.activeParameter + " > -9999'",
         geometryType: 'point',
       });
 
       const graphicsLayer = new GraphicsLayer();
 
-      //   jsonObj.forEach((obj) => {
-      //     const graphic = new Graphic({
-      //       geometry: obj.geometry,
-      //       symbol: {
-      //         type: 'simple-marker',
-      //         color: [255, 255, 255, 0],
-      //         size: 9,
-      //       },
-      //       attributes: {
-
-      //       },
-      //       outline: {
-      //         color: 'rgb(255,25,43)',
-      //       },
-      //       popupTemplate: graphicTemplate,
-      //     });
-      //     graphicsLayer.add(graphic);
-      //   });
+      jsonObj.forEach((obj) => {
+        if (obj.attributes[aqParameter] > -9999) {
+          const graphic = new Graphic({
+            geometry: obj.geometry,
+            symbol: {
+              type: 'simple-marker',
+              color: [255, 255, 255, 1],
+              size: 2,
+            },
+            attributes: {},
+            outline: {
+              color: [255, 255, 255, 0],
+            },
+            popupTemplate: graphicTemplate,
+          });
+          graphicsLayer.add(graphic);
+        }
+      });
 
       const map = new ArcGISMap({
         basemap: 'dark-gray',
-        layers: [aqLayer],
+        layers: [aqLayer, graphicsLayer],
       });
 
       this.view = new MapView({
@@ -159,7 +164,7 @@ export class Map extends React.Component {
       this.view.on('click', (event) => {
         this.view.hitTest(event).then((response) => {
           console.log(response.results.length);
-          // this.props.last48Hours(this.state.aqsid);
+          this.props.getLast48Hours(this.state.aqsid);
         });
       });
     });

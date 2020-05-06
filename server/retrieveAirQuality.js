@@ -25,10 +25,12 @@ const getCurrentAQIs = () => {
   });
 };
 
-const getMonitorPastAQIs = () => {
+const getMonitorPastAQIs = (id) => {
   return new Promise((resolve, reject) => {
     pool.query(
-      "SELECT validdate, validtime, pm25aqi, pm10aqi, ozoneaqi, no2aqi FROM airalert WHERE aqsid = '330099991' ORDER BY validdate + validtime",
+      "SELECT validdate, validtime, pm25aqi, pm10aqi, ozoneaqi, no2aqi FROM airalert WHERE aqsid = '" +
+        id +
+        "' ORDER BY validdate + validtime",
       (error, results) => {
         if (error) {
           console.log(error);

@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     currentAQData: [],
     past48HoursAQData: [],
+    activeParameter: 'PM25AQI',
     loading: false,
   };
 
@@ -26,7 +27,7 @@ class App extends Component {
   getMonitorAQData = async (aqsid) => {
     const res = await axios.get(`http://localhost:3001/monitor?id=${aqsid}`);
     this.setState({ past48HoursAQData: res.data });
-    // console.log(this.state.past48HoursAQData);
+    console.log(this.state.past48HoursAQData);
   };
 
   updateJsonWithCurrentAQI(data) {
@@ -51,14 +52,23 @@ class App extends Component {
     this.setState({ currentAQData: currentAQJson.default });
   }
 
+  changeParameter = (param) => {
+    console.log('The parameter has been changed to', param);
+    this.setState({ activeParameter: param });
+  };
+
   render() {
     return (
       <div className="App">
         <Navbar />
-        <Sidepanel />
+        <Sidepanel
+          changeParameter={this.changeParameter}
+          last48HoursData={this.state.past48HoursAQData}
+        />
         <Map
-          last48Hours={this.getMonitorAQData}
+          getLast48Hours={this.getMonitorAQData}
           currentAQI={this.state.currentAQData}
+          AQParameter={this.state.activeParameter}
         />
       </div>
     );
