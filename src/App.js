@@ -28,29 +28,37 @@ class App extends Component {
   getMonitorAQData = async (aqsid) => {
     const res = await axios.get(`http://localhost:3001/monitor?id=${aqsid}`);
     this.setState({ past48HoursAQData: res.data });
-    console.log(this.state.past48HoursAQData);
   };
 
   updateJsonWithCurrentAQI(data) {
     data.forEach((record) => {
       const ind = data.indexOf(record);
-      currentAQJson.features[ind].properties['ValidTime'] = record.validtime;
-      currentAQJson.features[ind].properties[
-        'ValidDate'
-      ] = record.validdate.slice(0, 10);
-      currentAQJson.features[ind].properties['ValidTime'] = record.validtime;
-      currentAQJson.features[ind].properties['OzoneAQI'] = parseInt(
-        record.ozoneaqi
-      );
-      currentAQJson.features[ind].properties['PM10AQI'] = parseInt(
-        record.pm10aqi
-      );
-      currentAQJson.features[ind].properties['PM25AQI'] = parseInt(
-        record.pm25aqi
-      );
-      currentAQJson.features[ind].properties['NO2AQI'] = parseInt(
-        record.no2aqi
-      );
+      if (currentAQJson.features[ind].properties['AQSID'] === record.aqsid) {
+        currentAQJson.features[ind].properties['ValidTime'] = record.validtime;
+        currentAQJson.features[ind].properties[
+          'ValidDate'
+        ] = record.validdate.slice(0, 10);
+        currentAQJson.features[ind].properties['ValidTime'] = record.validtime;
+        currentAQJson.features[ind].properties['OzoneAQI'] = parseInt(
+          record.ozoneaqi
+        );
+        currentAQJson.features[ind].properties['PM10AQI'] = parseInt(
+          record.pm10aqi
+        );
+        currentAQJson.features[ind].properties['PM25AQI'] = parseInt(
+          record.pm25aqi
+        );
+        currentAQJson.features[ind].properties['NO2AQI'] = parseInt(
+          record.no2aqi
+        );
+      } else {
+        console.log(
+          ind,
+          currentAQJson.features[ind].properties['AQSID'],
+          record.aqsid,
+          record.sitename
+        );
+      }
     });
 
     this.setState({ currentAQData: currentAQJson.default });

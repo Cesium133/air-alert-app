@@ -6,6 +6,15 @@ import ChevronsRightIcon from 'calcite-ui-icons-react/ChevronsRightIcon';
 import SideNav, { SideNavTitle, SideNavLink } from 'calcite-react/SideNav';
 import { CalciteH2 } from 'calcite-react/Elements';
 import Card, { CardTitle, CardContent, CardImage } from 'calcite-react/Card';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from 'recharts';
 
 class SidePanel extends React.Component {
   constructor(props) {
@@ -39,10 +48,10 @@ class SidePanel extends React.Component {
     );
   };
 
-  // Last48Hours(props) {
-  //   const last48 = props.map((row) => <li>"HI"{row.ozoneaqi}</li>);
-  //   return <ul>{last48}</ul>;
-  // }
+  componentDidUpdate() {
+    console.log('HERE');
+    console.log(this.props.last48HoursData);
+  }
 
   render() {
     return (
@@ -107,9 +116,25 @@ class SidePanel extends React.Component {
               />
               {'NO2'}
             </div>
-            {/* <this.Last48Hours last48={this.props.last48HoursData} /> */}
-            <Card style={{ maxWidth: '320px', margin: '20px' }}>
-              <CardImage
+            {/* <p>Past 48 hours of data</p> */}
+            <div>
+              <LineChart
+                width={350}
+                height={200}
+                data={this.props.last48HoursData}
+                margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+              >
+                <Line type="monotone" dataKey="pm25aqi" stroke="#8884d8" />
+                <XAxis dataKey="ValidTime" />
+                <YAxis dataKey="pm25aqi" />
+                {/* <CartesianGrid stroke="#ccc" strokeDasharray="5 15" /> */}
+                <Tooltip />
+              </LineChart>
+            </div>
+
+            {/* <Card style={{ maxWidth: '320px', margin: '20px' }}>
+
+            <CardImage
                 src="https://images.photowall.com/products/42521/cloudy-blue-sky-horizon.jpg?h=699&q=85"
                 caption="Florida, January 1954"
                 alt="Bridge Club, 1954"
@@ -119,7 +144,7 @@ class SidePanel extends React.Component {
                 <p>Cards can have full-bleed images with optional captions.</p>
                 <Button>View Examples</Button>
               </CardContent>
-            </Card>
+            </Card> */}
           </SideNav>
         </Drawer>
       </>

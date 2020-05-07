@@ -8,24 +8,29 @@ export class Map extends React.Component {
   }
 
   state = {
-    activeParameter: 'PM2.5',
+    activeParameter: 'PM25AQI',
     aqsid: '330099991',
   };
 
   componentDidMount() {
     loadModules(
-      ['esri/Map', 'esri/views/MapView', 'esri/layers/GeoJSONLayer'],
+      [
+        'esri/Map',
+        'esri/views/MapView',
+        'esri/layers/support/Field',
+        'esri/layers/GeoJSONLayer',
+      ],
       { css: true }
-    ).then(([ArcGISMap, MapView, GeoJSONLayer]) => {
+    ).then(([ArcGISMap, MapView, Field, GeoJSONLayer]) => {
       const jsonObj = this.props.currentAQI;
 
-      this.setState({ activeParameter: this.props.AQParameter }); // callback function to re-render map here
+      // this.setState({ activeParameter: this.props.AQParameter }); // callback function to re-render map here
       const aqParameter = this.props.AQParameter;
       console.log("'" + aqParameter + " > -9999'");
 
-      const pointRenderer = {
+      const aqRenderer = {
         type: 'class-breaks',
-        field: this.state.activeParameter,
+        field: 'PM25AQI', //this.state.activeParameter,
         defaultSymbol: {
           type: 'simple-marker',
           size: 9,
@@ -97,7 +102,50 @@ export class Map extends React.Component {
         ],
       };
 
-      const graphicTemplate = {
+      const aqFields = [
+        new Field({
+          name: 'AQSID',
+          type: 'string',
+        }),
+        new Field({
+          name: 'SiteName',
+          type: 'string',
+        }),
+        new Field({
+          name: 'Status',
+          type: 'string',
+        }),
+        new Field({
+          name: 'State',
+          type: 'string',
+        }),
+        new Field({
+          name: 'ValidDate',
+          type: 'string',
+        }),
+        new Field({
+          name: 'ValidTime',
+          type: 'string',
+        }),
+        new Field({
+          name: 'OzoneAQI',
+          type: 'double',
+        }),
+        new Field({
+          name: 'PM10AQI',
+          type: 'double',
+        }),
+        new Field({
+          name: 'PM25AQI',
+          type: 'double',
+        }),
+        new Field({
+          name: 'NO2AQI',
+          type: 'double',
+        }),
+      ];
+
+      const aqTemplate = {
         title: 'Air Quality Info:',
         content:
           'Last Updated: {ValidDate} {ValidTime} <br> AQSID: <strong>{AQSID}</strong> <br> Sitename:<strong>{SiteName}</strong> <br> PM2.5: <strong>{PM25AQI}</strong> <br> PM10: <strong>{PM10AQI}</strong> <br> Ozone: <strong>{OzoneAQI}</strong> <br> NO2: <strong>{NO2AQI}</strong>',
@@ -110,8 +158,12 @@ export class Map extends React.Component {
 
       const geoJsonLayer = new GeoJSONLayer({
         url: aqURL,
-        popupTemplate: graphicTemplate,
-        renderer: pointRenderer,
+        popupTemplate: aqTemplate,
+        renderer: aqRenderer,
+        fields: aqFields,
+        definitionExpression: 'PM25AQI > -9999',
+        outFields: ['*'],
+        // objectIdField: 'AQSID',
       });
 
       const map = new ArcGISMap({
@@ -128,9 +180,14 @@ export class Map extends React.Component {
 
       this.view.on('click', (event) => {
         this.view.hitTest(event).then((response) => {
-          console.log(response.results.length);
-          console.log(response.results[0].graphic.attributes);
-          // this.props.getLast48Hours(this.state.aqsid);
+          if (response.results.length) {
+            console.log(response.results[0].graphic.attributes.AQSID);
+            this.setState({
+              aqsid: response.results[0].graphic.attributes.AQSID,
+            });
+            this.props.getLast48Hours(this.state.aqsid);
+            // console.log(this.state.aqsid);
+          }
         });
       });
     });
