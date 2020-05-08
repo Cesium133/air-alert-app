@@ -9,10 +9,10 @@ export class Map extends React.Component {
 
   state = {
     activeParameter: 'PM25AQI',
-    aqsid: '330099991',
+    aqsid: '',
   };
 
-  componentDidMount() {
+  initMap() {
     loadModules(
       [
         'esri/Map',
@@ -30,7 +30,7 @@ export class Map extends React.Component {
 
       const aqRenderer = {
         type: 'class-breaks',
-        field: 'PM25AQI', //this.state.activeParameter,
+        field: aqParameter,
         defaultSymbol: {
           type: 'simple-marker',
           size: 9,
@@ -161,9 +161,8 @@ export class Map extends React.Component {
         popupTemplate: aqTemplate,
         renderer: aqRenderer,
         fields: aqFields,
-        definitionExpression: 'PM25AQI > -9999',
+        definitionExpression: "'" + aqParameter + " > -9999'",
         outFields: ['*'],
-        // objectIdField: 'AQSID',
       });
 
       const map = new ArcGISMap({
@@ -191,6 +190,16 @@ export class Map extends React.Component {
         });
       });
     });
+  }
+
+  componentDidMount() {
+    this.initMap();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.AQParameter !== prevProps.AQParameter) {
+      this.initMap();
+    }
   }
 
   componentWillUnmount() {

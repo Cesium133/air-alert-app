@@ -14,6 +14,7 @@ class App extends Component {
     past48HoursAQData: [],
     activeParameter: 'PM25AQI',
     loading: false,
+    sidepanelOpen: false,
   };
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class App extends Component {
 
   getMonitorAQData = async (aqsid) => {
     const res = await axios.get(`http://localhost:3001/monitor?id=${aqsid}`);
-    this.setState({ past48HoursAQData: res.data });
+    this.setState({ past48HoursAQData: res.data, sidepanelOpen: true });
   };
 
   updateJsonWithCurrentAQI(data) {
@@ -53,6 +54,7 @@ class App extends Component {
         );
       } else {
         console.log(
+          "Didn't match:",
           ind,
           currentAQJson.features[ind].properties['AQSID'],
           record.aqsid,
@@ -76,6 +78,7 @@ class App extends Component {
         <Sidepanel
           changeParameter={this.changeParameter}
           last48HoursData={this.state.past48HoursAQData}
+          sidepanelState={this.state.sidepanelOpen}
         />
         <Map
           getLast48Hours={this.getMonitorAQData}

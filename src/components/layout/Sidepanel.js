@@ -16,6 +16,8 @@ import {
   Legend,
 } from 'recharts';
 
+import Accordion from './Accordion';
+
 class SidePanel extends React.Component {
   constructor(props) {
     super(props);
@@ -43,14 +45,15 @@ class SidePanel extends React.Component {
   }
 
   changeAQParameter = (event) => {
-    this.setState({ parameter: event.target.value }, () =>
+    this.setState({ parameter: event.target.value, active: false }, () =>
       this.props.changeParameter(this.state.parameter)
     );
   };
 
   componentDidUpdate() {
-    console.log('HERE');
-    console.log(this.props.last48HoursData);
+    // if (this.props.sidepanelState == true) {
+    //   this.setState({ active: true });
+    // }
   }
 
   render() {
@@ -77,6 +80,8 @@ class SidePanel extends React.Component {
         >
           <SideNav className="">
             <CalciteH2 name="avenir-bold"> Welcome to Air Alert</CalciteH2>
+            <Accordion />
+
             <div>
               <h3>Select a parameter to render</h3>
               <input

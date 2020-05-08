@@ -18,7 +18,7 @@ const getCurrentAQIs = () => {
           console.log(error);
           reject(error);
         }
-        console.log(results.rows[0]);
+        console.log(results.rows);
         resolve(results.rows);
       }
     );
