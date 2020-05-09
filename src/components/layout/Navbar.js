@@ -11,8 +11,17 @@ import TopNav, {
 const Navbar = ({ title }) => {
   return (
     <TopNav>
-      <TopNavTitle>{title}</TopNavTitle>
-      <TopNavList>
+      <TopNavTitle
+        style={{
+          margin: '10px',
+          fontSize: '1.8em',
+          textAlign: 'center',
+          color: '#0d3069',
+        }}
+      >
+        {title}
+      </TopNavTitle>
+      <TopNavList style={{ margin: { left: '100px' }, textAlign: 'center' }}>
         <TopNavLink>About</TopNavLink>
         <TopNavLink>Sign up for Alerts</TopNavLink>
         <TopNavLink>Contact Us</TopNavLink>
@@ -22,7 +31,7 @@ const Navbar = ({ title }) => {
 };
 
 Navbar.defaultProps = {
-  title: 'Air Alert: Monitor the quality of your air',
+  title: 'Air Alert',
 };
 
 Navbar.propTypes = {

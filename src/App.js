@@ -29,6 +29,7 @@ class App extends Component {
   getMonitorAQData = async (aqsid) => {
     const res = await axios.get(`http://localhost:3001/monitor?id=${aqsid}`);
     this.setState({ past48HoursAQData: res.data, sidepanelOpen: true });
+    console.log(this.state.sidepanelOpen);
   };
 
   updateJsonWithCurrentAQI(data) {

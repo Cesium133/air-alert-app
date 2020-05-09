@@ -57,6 +57,9 @@ export class Map extends React.Component {
             symbol: {
               type: 'simple-marker',
               color: 'rgb(0, 228, 0)',
+              outline: {
+                color: 'rgb(14, 128, 44)',
+              },
             },
           },
           {
@@ -65,6 +68,9 @@ export class Map extends React.Component {
             symbol: {
               type: 'simple-marker',
               color: 'rgb(239, 245, 66)',
+              outline: {
+                color: 'rgb(121, 128, 1)',
+              },
             },
           },
           {
@@ -73,6 +79,9 @@ export class Map extends React.Component {
             symbol: {
               type: 'simple-marker',
               color: 'rgb(255, 126, 0)',
+              outline: {
+                color: 'rgb(130, 91, 0, 1)',
+              },
             },
           },
           {
@@ -81,6 +90,9 @@ export class Map extends React.Component {
             symbol: {
               type: 'simple-marker',
               color: 'rgb(230, 0, 0)',
+              outline: {
+                color: 'rgb(130, 20, 0, 1)',
+              },
             },
           },
           {
