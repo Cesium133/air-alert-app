@@ -49,7 +49,7 @@ class AccordionComponent extends React.Component {
   };
 
   componentDidUpdate() {
-    console.log(this.props.last48HoursData[0]);
+    // console.log(this.props.last48HoursData[0]);
   }
 
   render() {

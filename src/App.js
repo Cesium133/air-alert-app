@@ -22,14 +22,15 @@ class App extends Component {
   }
 
   getAQData = async () => {
-    const res = await axios.get('http://localhost:3001/current');
+    const res = await axios.get('http://app.kevincheriyan.com/node/server/api/current');
+    // const res = await axios.get('http://localhost/node/server/api/current')
     this.updateJsonWithCurrentAQI(res.data);
   };
 
   getMonitorAQData = async (aqsid) => {
-    const res = await axios.get(`http://localhost:3001/monitor?id=${aqsid}`);
+    const res = await axios.get(`http://app.kevincheriyan.com/node/server/api/monitor?id=${aqsid}`);
+    // const res = await axios.get(`http://localhost/node/server/api/monitor?id=${aqsid}`);
     this.setState({ past48HoursAQData: res.data, sidepanelOpen: true });
-    console.log(this.state.sidepanelOpen);
   };
 
   updateJsonWithCurrentAQI(data) {

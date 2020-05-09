@@ -7,7 +7,7 @@ const retrieveAirQuality = require('./retrieveAirQuality');
 app.use(express.json());
 
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
   res.setHeader(
     'Access-Control-Allow-Headers',
@@ -42,7 +42,7 @@ app.get('/monitor', (req, res) => {
       res.status(500).send(error);
     });
 });
-
-app.listen(port, () => {
-  console.log(`App is running on port ${port}.`);
-});
+app.listen(process.env.PORT);
+// app.listen(port, () => {
+//   console.log(`App is running on port ${port}.`);
+// });
