@@ -31,7 +31,9 @@
 
 .webmap {
   height: 600px;
-  width: 100%;
+  width: 77%;
+  float: 'right';
+  padding-top: '5px';
 }
 
 .App {
