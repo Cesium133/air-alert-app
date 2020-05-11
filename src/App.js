@@ -3,7 +3,9 @@ import Navbar from './components/layout/Navbar';
 import Sidepanel from './components/layout/Sidepanel';
 import Map from './components/Map';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
+import About from './components/About';
 
 // import * as currentAQJson from './data/currentAQ.json';
 import * as currentAQJson from './data/geoJsonTemplate.json';
@@ -14,7 +16,6 @@ class App extends Component {
     past48HoursAQData: [],
     activeParameter: 'PM25AQI',
     loading: false,
-    sidepanelOpen: false,
   };
 
   componentDidMount() {
@@ -30,7 +31,7 @@ class App extends Component {
   getMonitorAQData = async (aqsid) => {
     const res = await axios.get(`http://app.kevincheriyan.com/node/server/api/monitor?id=${aqsid}`);
     // const res = await axios.get(`http://localhost/node/server/api/monitor?id=${aqsid}`);
-    this.setState({ past48HoursAQData: res.data, sidepanelOpen: true });
+    this.setState({ past48HoursAQData: res.data});
   };
 
   updateJsonWithCurrentAQI(data) {
@@ -76,17 +77,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <Sidepanel
-          changeParameter={this.changeParameter}
-          last48HoursData={this.state.past48HoursAQData}
-          sidepanelState={this.state.sidepanelOpen}
-        />
-        <Map
-          getLast48Hours={this.getMonitorAQData}
-          currentAQI={this.state.currentAQData}
-          AQParameter={this.state.activeParameter}
-        />
+        <Router>
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route exact path="/">
+              <Navbar />
+              <Sidepanel
+                changeParameter={this.changeParameter}
+                last48HoursData={this.state.past48HoursAQData}
+                sidepanelState={this.state.sidepanelOpen}
+              />
+              <Map
+                getLast48Hours={this.getMonitorAQData}
+                currentAQI={this.state.currentAQData}
+                AQParameter={this.state.activeParameter}
+              />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
