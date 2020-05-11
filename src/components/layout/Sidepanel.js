@@ -20,10 +20,10 @@ class SidePanel extends React.Component {
   };
 
   componentDidUpdate() {
-    // if (this.props.sidepanelState == true) {
-    //   // this.setState({ active: true });
-    //   console.log(this.props.sidepanelState);
-    // }
+    if (this.props.sidepanelState == true) {
+      // this.setState({ active: true });
+    }
+
   }
 
   render() {

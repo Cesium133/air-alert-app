@@ -4,8 +4,8 @@ const pool = new Pool({
   user: 'postgres',
   password: 'password',
   host: 'localhost',
-  port: '5433',
-  database: 'airalert',
+  port: '5432',
+  database: 'airalert-db',
 });
 
 const getCurrentAQIs = () => {
@@ -18,6 +18,7 @@ const getCurrentAQIs = () => {
           console.log(error);
           reject(error);
         }
+        console.log(results)
         resolve(results.rows);
       }
     );

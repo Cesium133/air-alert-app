@@ -31,6 +31,7 @@ class App extends Component {
   };
 
   getMonitorAQData = async (aqsid) => {
+
     const res = await axios.get(
       `http://app.kevincheriyan.com/node/server/api/monitor?id=${aqsid}`
     );

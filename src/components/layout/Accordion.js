@@ -52,6 +52,7 @@ class AccordionComponent extends React.Component {
     });
   };
 
+
   renderCardTitle() {
     let title;
     console.log(this.state.parameter);
