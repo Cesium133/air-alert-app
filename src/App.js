@@ -23,36 +23,44 @@ class App extends Component {
   }
 
   getAQData = async () => {
-    const res = await axios.get('http://app.kevincheriyan.com/node/server/api/current');
+    const res = await axios.get(
+      'http://app.kevincheriyan.com/node/server/api/current'
+    );
     // const res = await axios.get('http://localhost/node/server/api/current')
     this.updateJsonWithCurrentAQI(res.data);
   };
 
   getMonitorAQData = async (aqsid) => {
-    const res = await axios.get(`http://app.kevincheriyan.com/node/server/api/monitor?id=${aqsid}`);
+
+    const res = await axios.get(
+      `http://app.kevincheriyan.com/node/server/api/monitor?id=${aqsid}`
+    );
     // const res = await axios.get(`http://localhost/node/server/api/monitor?id=${aqsid}`);
-    this.setState({ past48HoursAQData: res.data});
+    this.setState({ past48HoursAQData: res.data });
   };
 
   updateJsonWithCurrentAQI(data) {
     data.forEach((record) => {
       const ind = data.indexOf(record);
       if (currentAQJson.features[ind].properties['AQSID'] === record.aqsid) {
-        currentAQJson.features[ind].properties['ValidTime'] = record.validtime;
-        currentAQJson.features[ind].properties[
+        currentAQJson.default.features[ind].properties['ValidTime'] =
+          record.validtime;
+        currentAQJson.default.features[ind].properties[
           'ValidDate'
         ] = record.validdate.slice(0, 10);
-        currentAQJson.features[ind].properties['ValidTime'] = record.validtime;
-        currentAQJson.features[ind].properties['OzoneAQI'] = parseInt(
+        currentAQJson.default.features[ind].properties['ValidTime'] =
+          record.validtime;
+
+        currentAQJson.default.features[ind].properties['OzoneAQI'] = parseInt(
           record.ozoneaqi
         );
-        currentAQJson.features[ind].properties['PM10AQI'] = parseInt(
+        currentAQJson.default.features[ind].properties['PM10AQI'] = parseInt(
           record.pm10aqi
         );
-        currentAQJson.features[ind].properties['PM25AQI'] = parseInt(
+        currentAQJson.default.features[ind].properties['PM25AQI'] = parseInt(
           record.pm25aqi
         );
-        currentAQJson.features[ind].properties['NO2AQI'] = parseInt(
+        currentAQJson.default.features[ind].properties['NO2AQI'] = parseInt(
           record.no2aqi
         );
       } else {

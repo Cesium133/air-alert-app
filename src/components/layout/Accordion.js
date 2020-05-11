@@ -14,8 +14,9 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from 'recharts';
-import { CalciteP } from 'calcite-react/Elements/Elements-styled';
+import { CalciteP, CalciteH2 } from 'calcite-react/Elements';
 import TextTooltip from 'calcite-react/Tooltip';
 import AirQualityColorTable from '../../assets/images/airquality_index_color.png';
 
@@ -28,6 +29,9 @@ class AccordionComponent extends React.Component {
   state = {
     activeSectionIndexes: [],
     parameter: 'PM25AQI',
+    sitename: '',
+    stateus: '',
+    aqsid: '',
   };
 
   onAccordionChange(evt, index) {
@@ -48,8 +52,25 @@ class AccordionComponent extends React.Component {
     });
   };
 
-  componentDidUpdate() {
-    // console.log(this.props.last48HoursData[0]);
+
+  renderCardTitle() {
+    let title;
+    console.log(this.state.parameter);
+    if (this.state.parameter === 'PM25AQI') {
+      title = 'EPA PM2.5';
+    } else if (this.state.parameter === 'PM10AQI') {
+      title = 'EPA PM10';
+    } else if (this.state.parameter === 'Ozone') {
+      title = 'EPA Ozone';
+    } else {
+      title = 'EPA NO2';
+    }
+    return title;
+  }
+
+  renderTooltip(payload) {
+    console.log(payload[0]);
+    return 'HJIJIO';
   }
 
   render() {
@@ -61,8 +82,11 @@ class AccordionComponent extends React.Component {
         <AccordionSection>
           <AccordionTitle>Air Quality Index</AccordionTitle>
           <AccordionContent>
-            <CalciteP>
-              To understand what the marker colors mean, see the below chart.
+            <CalciteP style={{ textAlign: 'justify' }}>
+              To understand what the marker colors represent, see the below
+              chart, or visit the{' '}
+              <a href="https://www.airnow.gov/aqi/aqi-basics/">AirNow</a>{' '}
+              website.
             </CalciteP>
             <img src={AirQualityColorTable} alt="" />
           </AccordionContent>
@@ -83,6 +107,7 @@ class AccordionComponent extends React.Component {
               <TextTooltip
                 title="PM2.5 is particulate matter that is generally less than 2.5 micrometers. These extremely small 
                 particles can cause harm to our bodies by penetrating our lungs and entering our bloodstream."
+                placement="right"
               >
                 {'PM2.5'}
               </TextTooltip>
@@ -95,7 +120,13 @@ class AccordionComponent extends React.Component {
                 id=""
                 onChange={this.changeAQParameter}
               />
-              <TextTooltip title="PM10 text here.">{'PM10'}</TextTooltip>
+              <TextTooltip
+                title="PM10 is particulate matter that is between 2.5 and 10 micrometers in diameter. PM10 particles are
+                inhalable and are produced by motor vehicles and industrial operations."
+                placement="right"
+              >
+                {'PM10'}
+              </TextTooltip>
               <br />
               <input
                 type="radio"
@@ -104,7 +135,13 @@ class AccordionComponent extends React.Component {
                 id=""
                 onChange={this.changeAQParameter}
               />
-              <TextTooltip title="Ozone text here.">{'Ozone'}</TextTooltip>
+              <TextTooltip
+                title="Ground-level ozone is created by chemical reactions between oxides of nitrogen and volatile organic
+                compounds when sunlight and heat is present. Expect to find higher values during summertime."
+                placement="right"
+              >
+                {'Ozone'}
+              </TextTooltip>
               <br />
               <input
                 type="radio"
@@ -113,45 +150,100 @@ class AccordionComponent extends React.Component {
                 id=""
                 onChange={this.changeAQParameter}
               />
-              <TextTooltip title="NO2 text here">{'NO2'}</TextTooltip>
+              <TextTooltip
+                title="Nitrogen Dioxide is released by motor vehicles and burning of fossil fuels and is extremely harmful
+                to the environment and human health since it can contribute to severe cases of respiratory illnesses. "
+                placement="right"
+              >
+                {'NO2'}
+              </TextTooltip>
               <CalciteP style={{ margin: '10px' }}>
-                Hover over the parameter text to learn more.
+                Hover over the parameter text above to learn more.
               </CalciteP>
             </div>
 
-            {/* <Card style={{ maxWidth: '320px', margin: '20px' }}>
+            <Card style={{ maxWidth: '320px', margin: '10px' }}>
               <CardImage
                 src="https://images.photowall.com/products/42521/cloudy-blue-sky-horizon.jpg?h=699&q=85"
                 caption="Florida, January 1954"
                 alt="Bridge Club, 1954"
               />
               <CardContent>
-                <CardTitle>Card with Image</CardTitle>
-                <p>Cards can have full-bleed images with optional captions.</p>
-                <Button>View Examples</Button>
+                <CardTitle>Sources of Air Pollution</CardTitle>
+                <p>
+                  Air Pollution can originate from natural and man-made sources,
+                  although human origins contribute much more to it.
+                </p>
+                <Button>Learn More</Button>
               </CardContent>
-            </Card> */}
+            </Card>
           </AccordionContent>
         </AccordionSection>
         <AccordionSection>
           <AccordionTitle>Site Data</AccordionTitle>
           <AccordionContent>
-            <div>
-              <CalciteP>Site Name:</CalciteP>
-              <CalciteP>State:</CalciteP>
-              <CalciteP>Last Updated:</CalciteP>
-              <LineChart
-                width={350}
-                height={200}
-                data={this.props.last48HoursData}
-                margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+            <div style={{ background: 'yellow', textAlign: 'center' }}>
+              <CalciteP>
+                {this.props.last48HoursData.length
+                  ? this.renderCardTitle()
+                  : null}
+              </CalciteP>
+              <CalciteH2 style={{ fontWeight: 'bold' }}>
+                {this.props.last48HoursData.length
+                  ? this.props.last48HoursData[
+                      this.props.last48HoursData.length - 1
+                    ][this.state.parameter.toLowerCase()]
+                  : ''}
+              </CalciteH2>
+              <CalciteP>
+                {this.props.last48HoursData.length
+                  ? this.props.last48HoursData[0].sitename
+                  : ''}
+              </CalciteP>
+              <CalciteP>
+                {this.props.last48HoursData.length
+                  ? this.props.last48HoursData[0].stateus
+                  : ''}
+              </CalciteP>
+              <CalciteP>
+                {this.props.last48HoursData.length
+                  ? 'Last updated:' +
+                    this.props.last48HoursData[0].validdate.slice(0, 10) +
+                    ' ' +
+                    this.props.last48HoursData[0].validtime.slice(0, 5)
+                  : ''}
+              </CalciteP>
+              <div
+                style={{
+                  width: '100%',
+                  height: 200,
+                  background: 'pink',
+                }}
               >
-                <Line type="monotone" dataKey="pm25aqi" stroke="#8884d8" />
-                <XAxis dataKey="ValidTime" />
-                <YAxis dataKey="pm25aqi" />
-                {/* <CartesianGrid stroke="#ccc" strokeDasharray="5 15" /> */}
-                <Tooltip />
-              </LineChart>
+                <ResponsiveContainer>
+                  <LineChart
+                    width={250}
+                    height={200}
+                    data={this.props.last48HoursData}
+                    margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+                  >
+                    <Line
+                      type="monotone"
+                      dataKey={this.state.parameter.toLowerCase()}
+                      stroke="#8884d8"
+                      dot={false}
+                    />
+                    <XAxis dataKey="ValidTime" name="Time" />
+                    <YAxis
+                      dataKey={this.state.parameter.toLowerCase()}
+                      type="number"
+                      domain={[0, 'dataMax']}
+                    />
+                    {/* <CartesianGrid stroke="#ccc" strokeDasharray="5 15" /> */}
+                    <Tooltip content={this.renderTooltip} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </AccordionContent>
         </AccordionSection>
