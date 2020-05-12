@@ -194,6 +194,7 @@ export class Map extends React.Component {
         const geoJsonLayer = new GeoJSONLayer({
           url: aqURL,
           popupTemplate: aqTemplate,
+          popupEnabled: false,
           renderer: aqRenderer,
           fields: aqFields,
           // definitionExpression: "'PM25AQI >= 50'",

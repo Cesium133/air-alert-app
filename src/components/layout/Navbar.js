@@ -32,7 +32,7 @@ const Navbar = ({ title }) => {
           About
         </TopNavLink>
         <TopNavLink as={NavLink} to="/contact">
-          Contact Us
+          Contact
         </TopNavLink>
       </TopNavList>
     </TopNav>

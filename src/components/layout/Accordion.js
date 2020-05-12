@@ -18,7 +18,7 @@ import {
 } from 'recharts';
 import { CalciteP, CalciteH1 } from 'calcite-react/Elements';
 import TextTooltip from 'calcite-react/Tooltip';
-import AirQualityColorTable from '../../assets/images/airquality_index_color.png';
+import AirQualityColorTable from '../../assets/images/airquality_index_color_cropped.png';
 
 class AccordionComponent extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class AccordionComponent extends React.Component {
     this.onAccordionChange = this.onAccordionChange.bind(this);
   }
   state = {
-    activeSectionIndexes: [2],
+    activeSectionIndexes: [2, 3],
     parameter: 'PM25AQI',
     sitename: '',
     stateus: '',
@@ -51,7 +51,6 @@ class AccordionComponent extends React.Component {
       this.props.changeParameter(this.state.parameter);
     });
   };
-
 
   renderCardTitle() {
     let title;
@@ -97,10 +96,10 @@ class AccordionComponent extends React.Component {
     return color;
   }
 
-  renderTooltip(payload) {
-    // console.log(payload[0]);
-    return 'HJIJIO';
-  }
+  // renderTooltip(payload) {
+  //   // console.log(payload[0]);
+  //   return 'HJIJIO';
+  // }
 
   componentDidMount() {
     // console.log(
@@ -198,32 +197,24 @@ class AccordionComponent extends React.Component {
                 Hover over the parameter text above to learn more.
               </CalciteP>
             </div>
-
-            {/* <Card style={{ maxWidth: '320px', margin: '10px' }}>
-              <CardImage
-                src="https://images.photowall.com/products/42521/cloudy-blue-sky-horizon.jpg?h=699&q=85"
-                caption="Florida, January 1954"
-                alt="Bridge Club, 1954"
-              />
-              <CardContent>
-                <CardTitle>Sources of Air Pollution</CardTitle>
-                <p>
-                  Air Pollution can originate from natural and man-made sources,
-                  although human origins contribute much more.
-                </p>
-                <Button>Learn More</Button>
-              </CardContent>
-            </Card> */}
           </AccordionContent>
         </AccordionSection>
         <AccordionSection>
           <AccordionTitle>Site Data</AccordionTitle>
           <AccordionContent>
             <div
-              style={{
-                background: this.renderCardColor(),
-                textAlign: 'center',
-              }}
+              style={
+                this.props.last48HoursData.length
+                  ? {
+                      background: this.renderCardColor(),
+                      textAlign: 'center',
+                      borderStyle: 'solid',
+                      borderWidth: '2px',
+                      borderColor: '#616366',
+                      borderRadius: '8px',
+                    }
+                  : null
+              }
             >
               <CalciteP>
                 {this.props.last48HoursData.length
@@ -238,9 +229,11 @@ class AccordionComponent extends React.Component {
                   : ''}
               </CalciteH1>
               <CalciteP>
-                {this.props.last48HoursData.length
-                  ? this.props.last48HoursData[0].sitename
-                  : ''}
+                <strong>
+                  {this.props.last48HoursData.length
+                    ? this.props.last48HoursData[0].sitename
+                    : ''}
+                </strong>
               </CalciteP>
               <CalciteP>
                 {this.props.last48HoursData.length
@@ -262,24 +255,34 @@ class AccordionComponent extends React.Component {
                   width: '85%',
                   height: 200,
                   // background: 'pink',
-                  margin: '5px',
+                  // margin: '5px',
+                  marginLeft: '0',
+                  paddingTop: '30px',
+                  display: 'block',
                 }}
               >
                 <ResponsiveContainer>
                   <LineChart
-                    width={250}
+                    width={350}
                     height={100}
                     data={this.props.last48HoursData}
-                    margin={{ top: 10, right: 30, bottom: 10, left: 10 }}
+                    margin={{ top: 60, right: 30, bottom: 10, left: 10 }}
                   >
                     <Line
                       type="monotone"
                       dataKey={this.state.parameter.toLowerCase()}
-                      stroke="#8884d8"
+                      stroke="#0040a6"
                       dot={false}
+                      strokeWidth={2}
                     />
-                    <XAxis dataKey="ValidTime" name="Time" />
+                    <XAxis
+                      dataKey="ValidTime"
+                      name="Time"
+                      tickCount={2}
+                      // ticks={['Monday', 'Tuesday']}
+                    />
                     <YAxis
+                      hide={this.props.last48HoursData.length ? false : true}
                       dataKey={
                         this.props.last48HoursData.length
                           ? this.state.parameter.toLowerCase()

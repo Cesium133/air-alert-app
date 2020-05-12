@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from 'calcite-react/Button';
 import SideNav, { SideNavTitle, SideNavLink } from 'calcite-react/SideNav';
 import { CalciteH2 } from 'calcite-react/Elements';
 
@@ -23,7 +22,6 @@ class SidePanel extends React.Component {
     if (this.props.sidepanelState == true) {
       // this.setState({ active: true });
     }
-
   }
 
   render() {

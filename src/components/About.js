@@ -21,7 +21,7 @@ class About extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeSectionIndexes: [2],
+      activeSectionIndexes: [],
     };
     this.onAccordionChange = this.onAccordionChange.bind(this);
   }
@@ -136,7 +136,84 @@ class About extends React.Component {
             </AccordionContent>
           </AccordionSection>
           <AccordionSection>
-            <AccordionTitle>About the App</AccordionTitle>
+            <AccordionTitle>How was Air Alert made?</AccordionTitle>
+            <AccordionContent>
+              <div
+                style={{
+                  width: '80%',
+                  textAlign: 'left',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  display: 'block',
+                }}
+              >
+                <CalciteP>
+                  Air Alert uses air quality data from the{' '}
+                  <CalciteA href="https://files.airnowtech.org/">
+                    AirNow
+                  </CalciteA>{' '}
+                  website. Data for the last 48 hours is used to populate the
+                  webmap and sidepanel. <br />
+                </CalciteP>
+                <CalciteP>
+                  Python is used for data pre-processing, cleanup and database
+                  needs. Here's how:
+                </CalciteP>
+                <CalciteOl>
+                  <CalciteLi>
+                    Make request to the AirNow API to read .dat files for last
+                    48 hours
+                  </CalciteLi>
+                  <CalciteLi>
+                    Write rows to csv (skip non-US rows and unnecessary columns)
+                  </CalciteLi>
+                  <CalciteLi>
+                    Fill in blank AQI values with "-9999" (to avoid datatype
+                    conflicts with Postgres)
+                  </CalciteLi>
+                  <CalciteLi>
+                    Other data cleanup (remove quotes and special characters)
+                  </CalciteLi>
+                  <CalciteLi>
+                    Connect to local Postgres db and insert rows from each csv
+                  </CalciteLi>
+                  <CalciteLi>
+                    Garbage collection (delete local files after database write,
+                    delete records from db that are older than 2 days)
+                  </CalciteLi>
+                </CalciteOl>
+                <CalciteP>
+                  This Python script runs every hour from AWS EC2 instance on
+                  Task Scheduler and inserts rows to a local Postgres db.
+                </CalciteP>
+                <CalciteP>
+                  When the user loads Air Alert's webmap, a Node.js script
+                  running Express server makes a request to the Postgres
+                  database for all the records from the last hour. This data is
+                  shown on the webmap as point markers.
+                </CalciteP>
+                <CalciteP>
+                  When the user clicks on a marker, the same Node script sends
+                  the ID of the marker in an SQL query to the database and
+                  returns all records for the past 48 hours for that monitor.
+                  This data is then shown on the sidepanel of the app.
+                </CalciteP>
+                <img
+                  style={{
+                    width: '50%',
+                    textAlign: 'left',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    display: 'block',
+                  }}
+                  src={ArchitectureDiagram}
+                  alt=""
+                />
+              </div>
+            </AccordionContent>
+          </AccordionSection>
+          <AccordionSection>
+            <AccordionTitle>Where's the code?</AccordionTitle>
             <AccordionContent>
               <CalciteP
                 style={{
@@ -147,36 +224,21 @@ class About extends React.Component {
                   display: 'block',
                 }}
               >
-                <strong>How was this application made?</strong>
+                All the code used for Air Alert can be found on my GitHub page.
+                See{' '}
+                <CalciteA href="https://github.com/Cesium133/air-alert-app">
+                  {' '}
+                  this repo{' '}
+                </CalciteA>{' '}
+                for the frontend code used in this app, and
+                <CalciteA href="https://github.com/Cesium133/air-alert-data-download">
+                  {' '}
+                  this one{' '}
+                </CalciteA>{' '}
+                for all the work on data processing done with Python.
               </CalciteP>
-              <CalciteP
-                style={{
-                  width: '80%',
-                  textAlign: 'left',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  display: 'block',
-                }}
-              >
-                Air Alert uses air quality data from the{' '}
-                <CalciteA href="https://files.airnowtech.org/">AirNow</CalciteA>{' '}
-                website. Data for the last 48 hours are used to populate the map
-                and sidepanel.
-              </CalciteP>
-              <img
-                style={{
-                  width: '80%',
-                  textAlign: 'left',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  display: 'block',
-                }}
-                src={ArchitectureDiagram}
-                alt=""
-              />
             </AccordionContent>
           </AccordionSection>
-
           <AccordionSection>
             <AccordionTitle>Acknowledgements</AccordionTitle>
             <AccordionContent>
@@ -202,15 +264,19 @@ class About extends React.Component {
                 }}
               >
                 <CalciteUl>
-                  Jon Nordling (mentor) for helping with direction, advice and
-                  deployment
-                </CalciteUl>
-                <CalciteUl>Matt Millideo for pointers on React</CalciteUl>
-                <CalciteUl>
-                  Jonathan Resop for direction and advice with Capstone Project
+                  <em>Jon Nordling</em> (mentor) for helping with direction,
+                  advice and deployment
                 </CalciteUl>
                 <CalciteUl>
-                  Emily Shroads for Python and csv debugging
+                  {' '}
+                  <em>Matt Millideo</em> for pointers on React
+                </CalciteUl>
+                <CalciteUl>
+                  <em>Jonathan Resop</em> for direction and advice with Capstone
+                  Project
+                </CalciteUl>
+                <CalciteUl>
+                  <em>Emily Shroads</em> for Python and csv debugging
                 </CalciteUl>
               </CalciteOl>
             </AccordionContent>

@@ -6,6 +6,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import About from './components/About';
+import Contact from './components/Contact';
 
 // import * as currentAQJson from './data/currentAQ.json';
 import * as currentAQJson from './data/geoJsonTemplate.json';
@@ -31,7 +32,6 @@ class App extends Component {
   };
 
   getMonitorAQData = async (aqsid) => {
-
     const res = await axios.get(
       `https://app.kevincheriyan.com/node/server/api/monitor?id=${aqsid}`
     );
@@ -87,6 +87,9 @@ class App extends Component {
       <div className="App">
         <Router>
           <Switch>
+            <Route path="/contact">
+              <Contact />
+            </Route>
             <Route path="/about">
               <About />
             </Route>
