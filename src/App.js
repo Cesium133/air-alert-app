@@ -24,7 +24,7 @@ class App extends Component {
 
   getAQData = async () => {
     const res = await axios.get(
-      'http://app.kevincheriyan.com/node/server/api/current'
+      'https://app.kevincheriyan.com/node/server/api/current'
     );
     // const res = await axios.get('http://localhost/node/server/api/current')
     this.updateJsonWithCurrentAQI(res.data);
@@ -32,7 +32,7 @@ class App extends Component {
 
   getMonitorAQData = async (aqsid) => {
     const res = await axios.get(
-      `http://app.kevincheriyan.com/node/server/api/monitor?id=${aqsid}`
+      `https://app.kevincheriyan.com/node/server/api/monitor?id=${aqsid}`
     );
     // const res = await axios.get(`http://localhost/node/server/api/monitor?id=${aqsid}`);
     this.setState({ past48HoursAQData: res.data });
