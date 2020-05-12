@@ -59,7 +59,7 @@ class AccordionComponent extends React.Component {
       title = 'EPA PM2.5';
     } else if (this.state.parameter === 'PM10AQI') {
       title = 'EPA PM10';
-    } else if (this.state.parameter === 'Ozone') {
+    } else if (this.state.parameter === 'OzoneAQI') {
       title = 'EPA Ozone';
     } else {
       title = 'EPA NO2';

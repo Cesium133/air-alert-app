@@ -56,16 +56,15 @@ export class Map extends React.Component {
           defaultSymbol: {
             type: 'simple-marker',
             size: 9,
-            color: 'grey',
+            color: [255, 255, 255, 0],
             outline: {
-              color: 'rgb(255,255,255)',
+              color: [255, 255, 255, 0],
             },
           },
           classBreakInfos: [
             {
-              minValue: null,
               maxValue: null,
-              label: '',
+              label: 'N/A',
               symbol: {
                 type: 'simple-marker',
                 color: [255, 255, 255, 0],
@@ -181,9 +180,8 @@ export class Map extends React.Component {
         ];
 
         const aqTemplate = {
-          title: 'Air Quality Info:',
           content:
-            'Last Updated: {ValidDate} {ValidTime} <br> AQSID: <strong>{AQSID}</strong> <br> Sitename:<strong>{SiteName}</strong> <br> PM2.5: <strong>{PM25AQI}</strong> <br> PM10: <strong>{PM10AQI}</strong> <br> Ozone: <strong>{OzoneAQI}</strong> <br> NO2: <strong>{NO2AQI}</strong>',
+            'AQSID: <strong>{AQSID}</strong> <br> Sitename:<strong>{SiteName}</strong>',
         };
 
         const blob = new Blob([JSON.stringify(jsonObj)], {
@@ -194,7 +192,7 @@ export class Map extends React.Component {
         const geoJsonLayer = new GeoJSONLayer({
           url: aqURL,
           popupTemplate: aqTemplate,
-          popupEnabled: false,
+          // popupEnabled: false,
           renderer: aqRenderer,
           fields: aqFields,
           definitionExpression: definitionExpression,
