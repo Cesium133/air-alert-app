@@ -27,7 +27,7 @@ class AccordionComponent extends React.Component {
     this.onAccordionChange = this.onAccordionChange.bind(this);
   }
   state = {
-    activeSectionIndexes: [2, 3],
+    activeSectionIndexes: [],
     parameter: 'PM25AQI',
     sitename: '',
     stateus: '',

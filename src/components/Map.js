@@ -48,8 +48,7 @@ export class Map extends React.Component {
           : this.state.activeParameter;
         console.log('definitionExpression');
 
-        let definitionExpression = "'PM25AQI >= 50'"; //"'" + aqParameter + "> -9999'";
-        console.log(definitionExpression);
+        let definitionExpression = aqParameter + '>= 0';
 
         const aqRenderer = {
           type: 'class-breaks',
@@ -64,8 +63,9 @@ export class Map extends React.Component {
           },
           classBreakInfos: [
             {
-              minValue: -9999,
-              maxValue: -1,
+              minValue: null,
+              maxValue: null,
+              label: '',
               symbol: {
                 type: 'simple-marker',
                 color: [255, 255, 255, 0],
@@ -197,7 +197,6 @@ export class Map extends React.Component {
           popupEnabled: false,
           renderer: aqRenderer,
           fields: aqFields,
-          // definitionExpression: "'PM25AQI >= 50'",
           definitionExpression: definitionExpression,
           outFields: ['*'],
           title: 'Air Quality Index',
