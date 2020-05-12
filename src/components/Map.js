@@ -43,8 +43,13 @@ export class Map extends React.Component {
         const jsonObj = this.props.currentAQI;
 
         // this.setState({ activeParameter: this.props.AQParameter }); // callback function to re-render map here
-        const aqParameter = this.props.AQParameter;
-        console.log("'" + aqParameter + " > -9999'");
+        const aqParameter = this.props.AQParameter
+          ? this.props.AQParameter
+          : this.state.activeParameter;
+        console.log('definitionExpression');
+
+        let definitionExpression = "'PM25AQI >= 50'"; //"'" + aqParameter + "> -9999'";
+        console.log(definitionExpression);
 
         const aqRenderer = {
           type: 'class-breaks',
@@ -52,7 +57,7 @@ export class Map extends React.Component {
           defaultSymbol: {
             type: 'simple-marker',
             size: 9,
-            color: 'red',
+            color: 'grey',
             outline: {
               color: 'rgb(255,255,255)',
             },
@@ -191,8 +196,8 @@ export class Map extends React.Component {
           popupTemplate: aqTemplate,
           renderer: aqRenderer,
           fields: aqFields,
-          // definitionExpression: "'" + aqParameter + " >= 0'",
-          definitionExpression: "'" + aqParameter + "> -9999'",
+          // definitionExpression: "'PM25AQI >= 50'",
+          definitionExpression: definitionExpression,
           outFields: ['*'],
           title: 'Air Quality Index',
         });

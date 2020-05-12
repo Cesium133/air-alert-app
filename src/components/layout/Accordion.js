@@ -16,7 +16,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { CalciteP, CalciteH2 } from 'calcite-react/Elements';
+import { CalciteP, CalciteH1 } from 'calcite-react/Elements';
 import TextTooltip from 'calcite-react/Tooltip';
 import AirQualityColorTable from '../../assets/images/airquality_index_color.png';
 
@@ -27,7 +27,7 @@ class AccordionComponent extends React.Component {
     this.onAccordionChange = this.onAccordionChange.bind(this);
   }
   state = {
-    activeSectionIndexes: [],
+    activeSectionIndexes: [2],
     parameter: 'PM25AQI',
     sitename: '',
     stateus: '',
@@ -68,9 +68,44 @@ class AccordionComponent extends React.Component {
     return title;
   }
 
+  renderCardColor() {
+    let color = 'white';
+    if (this.props.last48HoursData.length) {
+      const aqi = parseInt(
+        this.props.last48HoursData[this.props.last48HoursData.length - 1][
+          this.state.parameter.toLowerCase()
+        ]
+      );
+      if (aqi >= 0) {
+        if (aqi < 51) {
+          color = 'rgb(0, 228, 0)';
+        } else if (aqi < 101) {
+          color = 'rgb(239, 245, 66)';
+        } else if (aqi < 151) {
+          color = 'rgb(255, 126, 0)';
+        } else if (aqi < 201) {
+          color = 'rgb(230, 0, 0)';
+        } else if (aqi < 301) {
+          color = 'rgb(128,0,128)';
+        } else if (aqi < 600) {
+          color = 'rgb(128, 0, 0)';
+        } else {
+          color = 'rgb(255,255,255)';
+        }
+      }
+    }
+    return color;
+  }
+
   renderTooltip(payload) {
-    console.log(payload[0]);
+    // console.log(payload[0]);
     return 'HJIJIO';
+  }
+
+  componentDidMount() {
+    // console.log(
+    //   this.props.last48HoursData.length ? this.state.parameter.toLowerCase() : 0
+    // );
   }
 
   render() {
@@ -95,7 +130,9 @@ class AccordionComponent extends React.Component {
           <AccordionTitle>Air Quality Index Parameter</AccordionTitle>
           <AccordionContent>
             <div>
-              <CalciteP>Select a parameter to render</CalciteP>
+              <CalciteP style={{ textAlign: 'center' }}>
+                Select a parameter to render
+              </CalciteP>
               <input
                 type="radio"
                 name="parameter"
@@ -157,12 +194,12 @@ class AccordionComponent extends React.Component {
               >
                 {'NO2'}
               </TextTooltip>
-              <CalciteP style={{ margin: '10px' }}>
+              <CalciteP style={{ margin: '10px', textAlign: 'center' }}>
                 Hover over the parameter text above to learn more.
               </CalciteP>
             </div>
 
-            <Card style={{ maxWidth: '320px', margin: '10px' }}>
+            {/* <Card style={{ maxWidth: '320px', margin: '10px' }}>
               <CardImage
                 src="https://images.photowall.com/products/42521/cloudy-blue-sky-horizon.jpg?h=699&q=85"
                 caption="Florida, January 1954"
@@ -172,29 +209,34 @@ class AccordionComponent extends React.Component {
                 <CardTitle>Sources of Air Pollution</CardTitle>
                 <p>
                   Air Pollution can originate from natural and man-made sources,
-                  although human origins contribute much more to it.
+                  although human origins contribute much more.
                 </p>
                 <Button>Learn More</Button>
               </CardContent>
-            </Card>
+            </Card> */}
           </AccordionContent>
         </AccordionSection>
         <AccordionSection>
           <AccordionTitle>Site Data</AccordionTitle>
           <AccordionContent>
-            <div style={{ background: 'yellow', textAlign: 'center' }}>
+            <div
+              style={{
+                background: this.renderCardColor(),
+                textAlign: 'center',
+              }}
+            >
               <CalciteP>
                 {this.props.last48HoursData.length
                   ? this.renderCardTitle()
                   : null}
               </CalciteP>
-              <CalciteH2 style={{ fontWeight: 'bold' }}>
+              <CalciteH1 style={{ fontWeight: 'bold' }}>
                 {this.props.last48HoursData.length
                   ? this.props.last48HoursData[
                       this.props.last48HoursData.length - 1
                     ][this.state.parameter.toLowerCase()]
                   : ''}
-              </CalciteH2>
+              </CalciteH1>
               <CalciteP>
                 {this.props.last48HoursData.length
                   ? this.props.last48HoursData[0].sitename
@@ -202,30 +244,33 @@ class AccordionComponent extends React.Component {
               </CalciteP>
               <CalciteP>
                 {this.props.last48HoursData.length
-                  ? this.props.last48HoursData[0].stateus
+                  ? 'State: ' + this.props.last48HoursData[0].stateus
                   : ''}
               </CalciteP>
-              <CalciteP>
+              <CalciteP style={{ fontSize: '0.8em' }}>
                 {this.props.last48HoursData.length
-                  ? 'Last updated:' +
-                    this.props.last48HoursData[0].validdate.slice(0, 10) +
+                  ? 'Last updated: ' +
+                    this.props.last48HoursData[
+                      this.props.last48HoursData.length - 1
+                    ].validdate.slice(0, 10) +
                     ' ' +
                     this.props.last48HoursData[0].validtime.slice(0, 5)
                   : ''}
               </CalciteP>
               <div
                 style={{
-                  width: '100%',
+                  width: '85%',
                   height: 200,
-                  background: 'pink',
+                  // background: 'pink',
+                  margin: '5px',
                 }}
               >
                 <ResponsiveContainer>
                   <LineChart
                     width={250}
-                    height={200}
+                    height={100}
                     data={this.props.last48HoursData}
-                    margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+                    margin={{ top: 10, right: 30, bottom: 10, left: 10 }}
                   >
                     <Line
                       type="monotone"
@@ -235,7 +280,11 @@ class AccordionComponent extends React.Component {
                     />
                     <XAxis dataKey="ValidTime" name="Time" />
                     <YAxis
-                      dataKey={this.state.parameter.toLowerCase()}
+                      dataKey={
+                        this.props.last48HoursData.length
+                          ? this.state.parameter.toLowerCase()
+                          : null
+                      }
                       type="number"
                       domain={[0, 'dataMax']}
                     />
